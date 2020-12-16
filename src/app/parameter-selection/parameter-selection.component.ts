@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Simulation } from '../simulation';
+import { FormsModule } from '@angular/forms';
 
 
 @Component({
