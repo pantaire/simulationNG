@@ -15,4 +15,5 @@ export interface Simulation {
     produktionsmengePUMax: number;
     produktionsmengeLMin: number;
     produktionsmengeLMax: number;
+    kauflustKunden: number;
 }

@@ -1,62 +1,90 @@
 <div class="container">
-<h2>Simulation:</h2>
+  <h2>Simulation:</h2>
   <div class="row">
     <div class="col-sm">
       <label for="rundenanzahl">Anzahl Runden:</label>
-      <input type="number" class="form-control" id="rundenanzahl">
+      <input [(ngModel)]="simulation.rundenAnzahl" placeholder="1000" type="number" class="form-control">
     </div>
     <div class="col-sm">
-        <label for="eventWahrscheinlichkeit">Eventwahrscheinlichkeit: (%)</label>
-        <input type="range" class="custom-range" id="eventWahrscheinlichkeit" min="0" max="100" value="50" step="5">
-        
+      <label for="eventWahrscheinlichkeit">Eventwahrscheinlichkeit: (%)</label>
+      <input [(ngModel)]="simulation.eventWahrscheinlichkeit" placeholder="50" type="range" class="custom-range"
+        min="0" max="100" value="simulation.eventWahrscheinlichkeit" step="5">
+
     </div>
   </div>
   <hr>
   <div class="row">
-      <h2 class="col-sm">Produzenten:</h2>
-      <h2 class="col-sm">Lieferanten:</h2>
-      <h2 class="col-sm">Kunden:</h2>
+    <h2 class="col-sm">Produzenten:</h2>
+    <h2 class="col-sm">Lieferanten:</h2>
+    <h2 class="col-sm">Kunden:</h2>
   </div>
   <div class="row">
     <div class="col-sm">
       <label for="liefer">Anzahl Produzenten:</label>
-      <input type="number" class="form-control" id="usr">
+      <input [(ngModel)]="simulation.lieferantenanzahl" placeholder="50" type="number" class="form-control">
     </div>
     <div class="col-sm">
       <label for="liefer">Anzahl Lieferanten:</label>
-      <input type="number" class="form-control" id="usr">
+      <input [(ngModel)]="simulation.produktionsunternehmenanzahl" placeholder="50" type="number" class="form-control">
     </div>
     <div class="col-sm">
       <label for="liefer">Anzahl Kunden:</label>
-      <input type="number" class="form-control" id="usr">
+      <input [(ngModel)]="simulation.kundenanzahl" placeholder="300" type="number" class="form-control">
     </div>
   </div>
   <div class="row">
-      <div class="col-sm">
-          <label for="liefer">Maximalkapital Produzenten:</label>
-          <input type="number" class="form-control" id="usr">
-        </div>
-        <div class="col-sm">
-            <label for="liefer">Maximalkapital Lieferanten:</label>
-    <input type="number" class="form-control" id="usr">
-  </div>
-  <div class="col-sm">
-    <label for="liefer">Maximalkapital Kunden:</label>
-    <input type="number" class="form-control" id="usr">
-</div>
-</div>
-<div class="row">
     <div class="col-sm">
-    <label for="liefer">Minimalkapital Produzenten:</label>
-    <input type="number" class="form-control" id="usr">
-</div>
-  <div class="col-sm">
-    <label for="liefer">Minimalkapital Lieferanten:</label>
-    <input type="number" class="form-control" id="usr">
-  </div>
-  <div class="col-sm">
+      <label for="liefer">Minimalkapital Produzenten:</label>
+      <input [(ngModel)]="simulation.startkapitalPUMin" placeholder="10000" type="number" class="form-control">
+    </div>
+    <div class="col-sm">
+      <label for="liefer">Minimalkapital Lieferanten:</label>
+      <input [(ngModel)]="simulation.startkapitalLMin" placeholder="10000" type="number" class="form-control">
+    </div>
+    <div class="col-sm">
       <label for="liefer">Minimalkapital Kunden:</label>
-    <input type="number" class="form-control" id="usr">
+      <input [(ngModel)]="simulation.startkapitalKMin" placeholder="10" type="number" class="form-control">
+    </div>
   </div>
-</div>
-
+  <div class="row">
+    <div class="col-sm">
+      <label for="liefer">Maximalkapital Produzenten:</label>
+      <input [(ngModel)]="simulation.startkapitalPUMax" placeholder="1000000" type="number" class="form-control">
+    </div>
+    <div class="col-sm">
+      <label for="liefer">Maximalkapital Lieferanten:</label>
+      <input [(ngModel)]="simulation.startkapitalLMax" placeholder="1000000" type="number" class="form-control">
+    </div>
+    <div class="col-sm">
+      <label for="liefer">Maximalkapital Kunden:</label>
+      <input [(ngModel)]="simulation.startkapitalKMax" placeholder="10000" type="number" class="form-control">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm">
+      <label for="liefer">Mindestproduktionsmenge Produzenten:</label>
+      <input [(ngModel)]="simulation.startkapitalPUMin" placeholder="40" type="number" class="form-control">
+    </div>
+    <div class="col-sm">
+      <label for="liefer">Mindestproduktionsmenge Lieferanten:</label>
+      <input [(ngModel)]="simulation.startkapitalLMin" placeholder="20" type="number" class="form-control">
+    </div>
+    <div class="col-sm">
+        <label for="liefer">Kauflust Kunden:</label>
+        <input [(ngModel)]="simulation.eventWahrscheinlichkeit" placeholder="50" type="range" class="custom-range"
+        min="0" max="100" value="simulation.kauflustKunden" step="5">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm">
+      <label for="liefer">Maximalproduktionsmenge Produzenten:</label>
+      <input [(ngModel)]="simulation.startkapitalPUMin" placeholder="2000" type="number" class="form-control">
+    </div>
+    <div class="col-sm">
+      <label for="liefer">Maximalproduktionsmenge Lieferanten:</label>
+      <input [(ngModel)]="simulation.startkapitalLMin" placeholder="8000" type="number" class="form-control">
+    </div>
+    <div class="col-sm">
+        <!--empty-->
+    </div>
+  </div>
