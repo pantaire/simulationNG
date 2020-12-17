@@ -1,8 +1,7 @@
 /* position: absolute problematic on small screens*/
 .footer {
     position: static;
-    bottom: 0;
-    margin: 0 auto;
+    margin: 1 auto;
     width: 100%;
 }
 #p {
@@ -11,4 +10,12 @@
 .smallpad {
     padding-top: 4;
     padding-bottom: 4;
+}
+
+footer {
+  background-color: #313036 !important;
+  font-family: 'Verdana', Verdana!important;
+  margin: 1!important;
+  overflow-x: hidden!important;
+  color: #FDFDFF!important;
 }
