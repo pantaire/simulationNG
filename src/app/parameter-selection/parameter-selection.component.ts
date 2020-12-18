@@ -29,6 +29,13 @@ export class ParameterSelectionComponent implements OnInit {
       produktionsmengeLMax: 8000,
       kauflustKunden: 50
     };
+
+    //maybe change later, not sure at this point
+    simulationInput: Simulation;
+    onSelect(simulation: Simulation): void {
+      this.simulationInput = simulation;
+    } 
+
   constructor() { }
 
   ngOnInit(): void {
