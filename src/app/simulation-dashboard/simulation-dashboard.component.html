@@ -1,0 +1,11 @@
+<div *ngIf="simulation">
+
+    <h2>Simulation mit {{simulation.rundenzahl }} Runden:</h2>
+    <div><span>id: </span>{{simulation.rundenanzahl}}</div>
+    <div>
+      <label>name:
+        <input [(ngModel)]="simulation" placeholder="simulation"/>
+      </label>
+    </div>
+  
+  </div>
