@@ -2,6 +2,14 @@
   <h1>Wirtschaftssimulation</h1>
   <div class="row">
     <div class="col-sm">
+      <form #simulationInput="ngForm" (ngSubmit)="onSubmit(simulationInput.value)">
+        <input type="number" name="rundenAnzahl" ngModel placeholder="Rundeanzahl">
+        <input type="number" name="eventWahrscheinlichkeit" ngModel placeholder="eventWahrscheinlichkeit">
+        <input type="number" name="einkommen" ngModel placeholder="einkommen">
+      <button type="submit">start Simulation</button>
+      </form>
+
+
       <label for="rundenanzahl">Anzahl Runden:</label>
       <input [(ngModel)]="simulation.rundenAnzahl" placeholder="1000" type="number" class="form-control">
     </div>

@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { ParameterSelectionComponent } from './parameter-selection.component';
 
 describe('ParameterSelectionComponent', () => {
