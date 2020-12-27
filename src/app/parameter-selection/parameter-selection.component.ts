@@ -16,9 +16,7 @@ export class ParameterSelectionComponent implements OnInit {
   simulationInput: Simulation;
   private simulationAPI = 'localhost:8000';  // URL to web api
   
-  constructor(
-    private http: HttpClient,
-    private simulationService: SimulationService) { }
+  constructor(private http: HttpClient) { }
 
   getSimulation(): void {
     this.simulationService.getSimulation()
@@ -32,7 +30,11 @@ export class ParameterSelectionComponent implements OnInit {
   }
 
   onSubmit(data) {
-    console.warn(data)
+    this.http.post('http://localhost:8080/simulation',data)
+    .subscribe((result)=>{
+      console.warn("result",result)
+    })
+    console.warn(data);
   }
 
 }
