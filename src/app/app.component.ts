@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'simulation';
-  name = 'simuville';
+  name = 'simulytics';
 }

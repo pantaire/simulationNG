@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Simulation } from '../simulation';
-import { SimulationService } from '../simulation.service';
 import { FormsModule } from '@angular/forms';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
@@ -18,23 +17,15 @@ export class ParameterSelectionComponent implements OnInit {
   
   constructor(private http: HttpClient) { }
 
-  getSimulation(): void {
-    this.simulationService.getSimulation()
-        .subscribe(simulation => this.simulation = simulation);
-  }
-  private log(message: string) {
-    this.messageService.add(`HeroService: ${message}`);
-  }
+  
   ngOnInit(): void {
-    this.getSimulation();
   }
 
   onSubmit(data) {
-    this.http.post('http://localhost:8080/simulation',data)
+    this.http.post('http://localhost:4200/dashboard',data)
     .subscribe((result)=>{
-      console.warn("result",result)
+      console.warn(result,"result")
     })
     console.warn(data);
   }
-
 }

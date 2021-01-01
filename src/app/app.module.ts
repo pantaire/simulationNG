@@ -8,7 +8,6 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { ParameterSelectionComponent } from './parameter-selection/parameter-selection.component';
 import { SimulationDashboardComponent } from './simulation-dashboard/simulation-dashboard.component';
-import { MessagesComponent } from './messages/messages.component';
 import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
@@ -17,8 +16,7 @@ import { AppRoutingModule } from './app-routing.module';
     FooterComponent,
     HeaderComponent,
     ParameterSelectionComponent,
-    SimulationDashboardComponent,
-    MessagesComponent
+    SimulationDashboardComponent
   ],
   imports: [
     HttpClientModule,

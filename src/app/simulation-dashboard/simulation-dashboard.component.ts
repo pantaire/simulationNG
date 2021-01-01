@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Simulation } from './simulation';
+import { Simulation } from '../simulation';
 
 @Component({
   selector: 'app-simulation-dashboard',
