@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Simulation } from '../simulation';
 import { FormsModule } from '@angular/forms';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -13,7 +13,7 @@ export class ParameterSelectionComponent implements OnInit {
   
   //maybe change later, not sure at this point
   simulationInput: Simulation;
-  private simulationAPI = 'localhost:8000';  // URL to web api
+  private simulationAPI = 'localhost:8080/simulation';  // URL to web api
   
   constructor(private http: HttpClient) { }
 
@@ -22,7 +22,7 @@ export class ParameterSelectionComponent implements OnInit {
   }
 
   onSubmit(data) {
-    this.http.post('http://localhost:4200/dashboard',data)
+    this.http.post(this.simulationAPI, data)
     .subscribe((result)=>{
       console.warn(result,"result")
     })
