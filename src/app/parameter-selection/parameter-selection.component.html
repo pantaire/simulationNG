@@ -5,11 +5,11 @@
 
       <div class="col-sm">
         <label for="rundenanzahl">Anzahl Runden:</label>
-        <input name="rundenanzahl" ngModel placeholder="1000" type="number" class="form-control">
+        <input required name="rundenanzahl" [(ngModel)]="rundenanzahl" placeholder="1000" type="number" class="form-control">
       </div>
       <div class="col-sm">
         <label for="eventWahrscheinlichkeit">Eventwahrscheinlichkeit: (%)</label>
-        <input name="" ngModel placeholder="0.5" type="range" class="custom-range" min="0" max="1"
+        <input required name="eventWahrscheinlichkeit" [(ngModel)]="eventWahrscheinlichkeit" placeholder="0.5" type="range" class="custom-range" min="0" max="1"
           value="eventWahrscheinlichkeit" step="0.01">
       </div>
     </div>
@@ -23,98 +23,106 @@
    <div class="row">
       <div class="col-sm">
         <label for="produktionsunternehmenanzahl">Anzahl Produzenten:</label>
-        <input name="produktionsunternehmenanzahl" ngModel placeholder="50" type="number" class="form-control">
+        <input required name="produktionsunternehmenanzahl" [(ngModel)]="produktionsunternehmenanzahl" placeholder="50" type="number" class="form-control">
       </div>
       <div class="col-sm">
         <label for="lieferantenanzahl">Anzahl Lieferanten:</label>
-        <input name="lieferantenanzahl" ngModel placeholder="0.5" type="number" class="form-control">
+        <input required name="lieferantenanzahl" [(ngModel)]="lieferantenanzahl" placeholder="0.5" type="number" class="form-control">
       </div>
       <div class="col-sm">
         <label for="kundenanzahl">Anzahl Kunden:</label>
-        <input name="kundenanzahl" ngModel placeholder="300" type="number" class="form-control">
+        <input required name="kundenanzahl" [(ngModel)]="kundenanzahl" placeholder="300" type="number" class="form-control">
       </div>
     </div> 
+    <br>
+    <hr>
     <br>
     <div class="row">
       <div class="col-sm">
         <label for="startKapitalPUMin">Minimalkapital Produzenten:</label>
-        <input name="startKapitalPUMin" ngModel placeholder="10000" type="number" class="form-control">
+        <input required name="startKapitalPUMin" [(ngModel)]="startKapitalPUMin" placeholder="10000" type="number" class="form-control">
       </div>
       <div class="col-sm">
         <label for="startKapitalLMin">Minimalkapital Lieferanten:</label>
-        <input name="startKapitalLMin" ngModel placeholder="10000" type="number" class="form-control">
+        <input required name="startKapitalLMin" [(ngModel)]="startKapitalLMin" placeholder="10000" type="number" class="form-control">
       </div>
       <div class="col-sm">
         <label for="startKapitalKMin">Minimalkapital Kunden:</label>
-        <input name="startKapitalKMin" ngModel placeholder="10" type="number" class="form-control">
+        <input required name="startKapitalKMin" [(ngModel)]="startKapitalKMin" placeholder="10" type="number" class="form-control">
       </div>
     </div>
     <br>
     <div class="row">
       <div class="col-sm">
         <label for="startKapitalPUMax">Maximalkapital Produzenten:</label>
-        <input name="startKapitalPUMax" ngModel placeholder="1000000" type="number" class="form-control">
+        <input required name="startKapitalPUMax" [(ngModel)]="startKapitalPUMax" placeholder="1000000" type="number" class="form-control">
       </div>
       <div class="col-sm">
         <label for="startKapitalLMax">Maximalkapital Lieferanten:</label>
-        <input name="startKapitalLMax" ngModel placeholder="1000000" type="number" class="form-control">
+        <input required name="startKapitalLMax" [(ngModel)]="startKapitalLMax" placeholder="1000000" type="number" class="form-control">
       </div>
       <div class="col-sm">
         <label for="startKapitalKMax">Maximalkapital Kunden:</label>
-        <input name="startKapitalKMax" ngModel placeholder="10000" type="number" class="form-control">
+        <input required name="startKapitalKMax" [(ngModel)]="startKapitalLMax" placeholder="10000" type="number" class="form-control">
       </div>
     </div>
+    <br>
+    <hr>
     <br>
     <div class="row">
       <div class="col-sm">
         <label for="startKapitalPUMin">Mindestproduktionsmenge Produzenten:</label>
-        <input name="startKapitalPUMin" ngModel placeholder="40" type="number" class="form-control">
+        <input required name="startKapitalPUMin" [(ngModel)]="startKapitalPUMin" placeholder="40" type="number" class="form-control">
       </div>
       <div class="col-sm">
         <label for="startKapitalLMin">Mindestproduktionsmenge Lieferanten:</label>
-        <input name="startKapitalLMin" ngModel placeholder="20" type="number" class="form-control">
+        <input required name="startKapitalLMin" [(ngModel)]="startKapitalLMin" placeholder="20" type="number" class="form-control">
       </div>
       <div class="col-sm">
-        <label for="kauflustKunden">Kauflust Kunden:</label>
-        <input name="kauflustKunden" ngModel placeholder="0.5" type="range" class="custom-range" min="0" max="1"
-          value="kauflustKunden" step="0.01">
+        <!--label for="kauflustKunden">Kauflust Kunden:</label>
+        <input required name="kauflustKunden" [(ngModel)]="kauflustKunden" placeholder="0.5" type="range" class="custom-range" min="0" max="1"
+          value="kauflustKunden" step="0.01"-->
       </div>
     </div>
     <br>
     <div class="row">
       <div class="col-sm">
         <label for="produktionsmengePUMax">Maximalproduktionsmenge Produzenten:</label>
-        <input name="produktionsmengePUMax" ngModel placeholder="2000" type="number" class="form-control">
+        <input required name="produktionsmengePUMax" [(ngModel)]="produktionsmengePUMax" placeholder="2000" type="number" class="form-control">
       </div>
       <div class="col-sm">
         <label for="produktionsmengeLMax">Maximalproduktionsmenge Lieferanten:</label>
-        <input name="produktionsmengeLMax" ngModel placeholder="8000" type="number" class="form-control">
+        <input required name="produktionsmengeLMax" [(ngModel)]="produktionsmengeLMax" placeholder="8000" type="number" class="form-control">
       </div>
       <div class="col-sm">
         <!--empty-->
       </div>
     </div>
+    <br>
+    <hr>
+    <br>
     <div class="row">
       <div class="col-sm">
         <label for="lagerPUMin">Mindestlagerkapazität Produzenten:</label>
-        <input name="lagerPUMin" ngModel placeholder="50" type="number" class="form-control">
+        <input required name="lagerPUMin" [(ngModel)]="lagerPUMin" placeholder="50" type="number" class="form-control">
       </div>
       <div class="col-sm">
         <label for="lagerLMin">Mindestlagerkapazität Lieferanten:</label>
-        <input name="lagerLMin" ngModel placeholder="30" type="number" class="form-control">
+        <input required name="lagerLMin" [(ngModel)]="lagerLMin" placeholder="30" type="number" class="form-control">
       </div>
       <div class="col-sm">
        <!--empty-->
       </div>
     </div>
+    <br>
     <div class="row">
       <div class="col-sm">
         <label for="lagerPUMax">Mindestlagerkapazität Produzenten:</label>
-        <input name="lagerPUMax" ngModel placeholder="80" type="number" class="form-control">
+        <input required name="lagerPUMax" [(ngModel)]="lagerPUMax" placeholder="80" type="number" class="form-control">
       </div>
       <div class="col-sm">
         <label for="lagerLMax">Mindestlagerkapazität Lieferanten:</label>
-        <input name="lagerLMax" ngModel placeholder="60" type="number" class="form-control">
+        <input required name="lagerLMax" [(ngModel)]="lagerLMax" placeholder="60" type="number" class="form-control">
       </div>
       <div class="col-sm">
        <!--empty-->
@@ -122,9 +130,12 @@
     </div>
     <br>
     <div class="text-center">
-      <a routerLink="/dashboard">
-        <button>Simulation starten</button>
-      </a>
+      <button>
+          <a routerLink="/dashboard">
+          Simulation starten
+        </a>
+        </button>
+        <br>
     </div>
   </form>
 </div>
