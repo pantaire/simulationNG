@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Simulation } from '../simulation';
+import { simulation } from '../mock-sim';
 
 @Component({
   selector: 'app-simulation-dashboard',
@@ -10,7 +10,7 @@ export class SimulationDashboardComponent implements OnInit {
 
   constructor() { }
 
-  @Input() simulation : Simulation;
+  @Input() simulation : typeof simulation;
   ngOnInit(): void {
   }
 

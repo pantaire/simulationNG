@@ -15,3 +15,6 @@
 
 3. Kommunikation Backend
     - klären, welche JSONs wie wohin übergeben werden
+        - Methode
+        - Pfad
+        - Header/Body
