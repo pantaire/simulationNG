@@ -16,7 +16,6 @@ export class ParameterSelectionComponent implements OnInit {
   private simulationAPI = 'localhost:8080/simulation';  // URL to web api
   
   constructor(private http: HttpClient) { }
-
   
   ngOnInit(): void {
   }

@@ -1,3 +1,5 @@
+import { NumberValueAccessor } from "@angular/forms";
+
 export interface Simulation {
     rundenanzahl: number;
     eventWahrscheinlichkeit: number;
@@ -15,5 +17,9 @@ export interface Simulation {
     produktionsmengePUMax: number;
     produktionsmengeLMin: number;
     produktionsmengeLMax: number;
-    kauflustKunden: number;
+    //kauflustKunden: number;
+    lagerLMin: number;
+    lagerLMax: number;
+    lagerPUMin: number;
+    lagerPUMax: number;
 }

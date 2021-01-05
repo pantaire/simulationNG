@@ -17,5 +17,8 @@ export const simulation: Simulation = {
     produktionsmengePUMax: 2000,
     produktionsmengeLMin: 20,
     produktionsmengeLMax: 8000,
-    kauflustKunden: 50
+    lagerLMin: 10,
+    lagerLMax: 40,
+    lagerPUMin: 15,
+    lagerPUMax: 30,
   };

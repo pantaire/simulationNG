@@ -6,15 +6,10 @@
         - keine Kommastellen (notfalls runden?)
         - Warnung auf möglicherweise zu lange Startdauer der Simulation ab 10000 Runden oder Teilnehmern (ca.)
         - Anzeige der eingestellten Zahlen an den Slidern
+    - Validierung Nutzereingabe implementieren
     
 2. Dashboardseite
     - definieren, welche Dashboards erwünscht sind -> Übergabe der Daten erst am Schluss oder nach jeder (bzw jeder n-ten) Runde?
         - Anzeige der jeweiligen Events
         - Verlauf der letzten Runde
         - Gesamtkapital K/L/PU
-
-3. Kommunikation Backend
-    - klären, welche JSONs wie wohin übergeben werden
-        - Methode
-        - Pfad
-        - Header/Body
