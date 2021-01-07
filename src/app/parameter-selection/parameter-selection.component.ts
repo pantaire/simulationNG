@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Simulation } from '../simulation';
 import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
-import { simulation } from '../mock-sim';
 import { Router } from '@angular/router';
 
 
@@ -18,9 +17,8 @@ export class ParameterSelectionComponent implements OnInit {
   simulationInput: Simulation;
   private simulationAPI = 'localhost:8080/simulation';  // URL to web api
   
-  constructor(private router: Router) { }
-  constructor(private http: HttpClient) { }
-  
+  constructor(private router: Router, private http: HttpClient) { }
+
   ngOnInit(): void {
   }
 
