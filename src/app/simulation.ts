@@ -1,5 +1,3 @@
-import { NumberValueAccessor } from "@angular/forms";
-
 export interface Simulation {
     rundenanzahl: number;
     eventWahrscheinlichkeit: number;

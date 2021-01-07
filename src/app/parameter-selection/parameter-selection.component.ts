@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Simulation } from '../simulation';
 import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { simulation } from '../mock-sim';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -9,22 +11,26 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './parameter-selection.component.html',
   styleUrls: ['./parameter-selection.component.css']
 })
+
 export class ParameterSelectionComponent implements OnInit {
   
   //maybe change later, not sure at this point
   simulationInput: Simulation;
   private simulationAPI = 'localhost:8080/simulation';  // URL to web api
   
+  constructor(private router: Router) { }
   constructor(private http: HttpClient) { }
   
   ngOnInit(): void {
   }
 
-  onSubmit(data) {
-    this.http.post(this.simulationAPI, data)
+  onSubmit(simulationInput) {
+    this.http.post(this.simulationAPI, simulationInput)
     .subscribe((result)=>{
-      console.warn(result,"result")
+      console.log(result,"result")
     })
-    console.warn(data);
+    console.warn(simulationInput);
+    alert("Entered data: " + simulationInput)
+    this.router.navigate(['role']);
   }
 }

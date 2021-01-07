@@ -1,6 +1,6 @@
 import { Simulation } from './simulation';
 
-export const simulation: Simulation = {
+export const sim: Simulation = {
     rundenanzahl: 1000,
     eventWahrscheinlichkeit: 80,
     lieferantenanzahl: 50,

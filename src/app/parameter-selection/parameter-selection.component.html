@@ -4,12 +4,7 @@
     <div class="row">
       <div class="col-sm">
         <label for="rundenanzahl">Anzahl Runden:</label>
-        <input required name="rundenanzahl" [value]="runde" [(ngModel)]="rundenanzahl" placeholder="1000" type="number" class="form-control">
-       
-        <div>
-          {{rundenanzahl}}
-        </div>
-        
+        <input required name="rundenanzahl" [value]="runde" [(ngModel)]="rundenanzahl" placeholder="1000" type="number" class="form-control">        
       </div>
       <div class="col-sm">
         <label for="eventWahrscheinlichkeit">Eventwahrscheinlichkeit: (%)</label>
@@ -134,11 +129,11 @@
     </div>
     <br>
     <div class="text-center">
-      <button>
-          <a routerLink="/dashboard">
-          Simulation starten
-        </a>
+      <!--a routerLink="/dashboard"-->
+      <button *ngIf="simulationInput" type="submit">
+          Simulation starten {{ simulationInput.rundenanzahl }}
         </button>
+        <!--/a-->
         <br>
     </div>
   </form>
