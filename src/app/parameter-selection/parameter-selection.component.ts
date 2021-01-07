@@ -29,6 +29,6 @@ export class ParameterSelectionComponent implements OnInit {
     })
     console.warn(simulationInput);
     alert("Entered data: " + simulationInput)
-    this.router.navigate(['role']);
+    this.router.navigate(['dashboard']);
   }
 }
