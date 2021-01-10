@@ -45,17 +45,22 @@ export class SimulationDashboardComponent implements OnInit {
     });
   
   var chart2 = new Chart("chart2", {
-    type: 'bar',
+    type: 'line',
     data: {
-      labels: ['Lieferanten', 'Produktionsunternehmen', 'Kunden'],
+      labels: ['10', '20', '30', '40', '50', '60', '70', '80', '90', '100'],
       datasets: [{
-        label: 'Gesamtzahl',
-        data: [120, 190, 170],
+        label: 'Rundenverlauf',
+        data: [120, 190, 170, 128, 239, 111, 120, 90, 100, 140],
         backgroundColor: [
         'rgb(0, 204, 255)',
         'rgb(0, 153, 255)',
         'rgb(153, 51, 255)'
         ],
+        borderColor: [
+            'rgb(0, 204, 255)',
+            'rgb(0, 153, 255)',
+            'rgb(153, 51, 255)'
+          ],
         borderWidth: 1
       }]
     },

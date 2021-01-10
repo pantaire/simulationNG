@@ -10,6 +10,7 @@ import { HeaderComponent } from './header/header.component';
 import { ParameterSelectionComponent } from './parameter-selection/parameter-selection.component';
 import { SimulationDashboardComponent } from './simulation-dashboard/simulation-dashboard.component';
 import { AppRoutingModule } from './app-routing.module';
+import { WeatherComponent } from './weather/weather.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { AppRoutingModule } from './app-routing.module';
     FooterComponent,
     HeaderComponent,
     ParameterSelectionComponent,
-    SimulationDashboardComponent
+    SimulationDashboardComponent,
+    WeatherComponent
   ],  
   imports: [
     HttpClientModule,  
