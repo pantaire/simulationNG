@@ -1,3 +1,4 @@
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -12,19 +13,20 @@ import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent,  
     FooterComponent,
     HeaderComponent,
     ParameterSelectionComponent,
     SimulationDashboardComponent
-  ],
+  ],  
   imports: [
-    HttpClientModule,
+    HttpClientModule,  
     BrowserModule,
     AppRoutingModule, 
     FormsModule
-  ],
-  providers: [],
+  ],  
+  providers: [], 
   bootstrap: [AppComponent]
-})
+})  
 export class AppModule { }
+
