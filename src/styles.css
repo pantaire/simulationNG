@@ -45,7 +45,7 @@ text-transform: none;
 
 button{
    background: #51FDFD !important;
-   background-image: -webkit-linear-gradient(top, #51FDFD, #902EFD)!important !important;
+   background-image: -webkit-linear-gradient(top, #51FDFD, #902EFD)!important;
    background-image: -moz-linear-gradient(top, #51FDFD, #902EFD) !important;
    background-image: -ms-linear-gradient(top, #51FDFD, #902EFD) !important;
    background-image: -o-linear-gradient(top, #51FDFD, #902EFD)!important;
