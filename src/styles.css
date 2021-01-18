@@ -18,6 +18,11 @@ body{
   overflow-x: hidden!important;
   color: #FDFDFF!important;
 }
+
+div{
+    font-family: Benton Sans, Geneva, sans-serif;
+}
+
 h2{
 font-size: 22px;;
 word-spacing: 0px;
