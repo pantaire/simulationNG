@@ -1,4 +1,4 @@
-export interface Simulation {
+export class Simulation {
     rundenanzahl: number;
     eventWahrscheinlichkeit: number;
     lieferantenanzahl: number;

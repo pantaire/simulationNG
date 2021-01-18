@@ -1,3 +1,11 @@
+<!--delete from here-->
+<div>
+<app-todo-item *ngFor="let todo of todos" [todo]="todo">
+
+</app-todo-item>
+</div>
+<!--delete up to here-->
+
 <div class="container">
   <h1>Wirtschaftssimulation</h1>
   <form #simulationInput="ngForm" (ngSubmit)="onSubmit(simulationInput.value)">
@@ -131,7 +139,7 @@
     <div class="text-center">
       <!--a routerLink="/dashboard"-->
       <button *ngIf="simulationInput" type="submit">
-          Simulation starten {{ simulationInput.rundenanzahl }}
+          Simulation starten
         </button>
         <!--/a-->
         <br>

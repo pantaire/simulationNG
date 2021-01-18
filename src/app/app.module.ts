@@ -11,6 +11,8 @@ import { ParameterSelectionComponent } from './parameter-selection/parameter-sel
 import { SimulationDashboardComponent } from './simulation-dashboard/simulation-dashboard.component';
 import { AppRoutingModule } from './app-routing.module';
 import { WeatherComponent } from './weather/weather.component';
+import { TodoItemComponent } from './todo-item/todo-item.component';
+import { ExpertModeComponent } from './expert-mode/expert-mode.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { WeatherComponent } from './weather/weather.component';
     HeaderComponent,
     ParameterSelectionComponent,
     SimulationDashboardComponent,
-    WeatherComponent
+    WeatherComponent,
+    TodoItemComponent,
+    ExpertModeComponent
   ],  
   imports: [
     HttpClientModule,  
