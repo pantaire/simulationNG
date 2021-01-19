@@ -1,4 +1,4 @@
-import { Simulation } from './simulation';
+import { Simulation } from '../models/simulation';
 
 export const sim: Simulation = {
     rundenanzahl: 1000,

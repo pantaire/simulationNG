@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Simulation } from '../simulation';
+import { Simulation } from '../../models/simulation';
 import { Chart } from 'node_modules/chart.js';
 
 @Component({

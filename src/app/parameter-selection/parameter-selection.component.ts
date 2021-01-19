@@ -1,9 +1,10 @@
 import { Component, OnInit, Input, Output } from '@angular/core';
-import { Simulation } from '../simulation';
-import { SimulationService } from '../simulation.service';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { EventEmitter } from 'events';
+
+import { SimulationService } from '../simulation.service';
+import { Simulation } from '../../models/simulation';
 
 @Component({
   selector: 'app-parameter-selection',
@@ -18,7 +19,7 @@ export class ParameterSelectionComponent implements OnInit {
 
   router:Router;
   simulation:Simulation;
-    simulationService: any;
+  simulationService: any;
   //private simulationAPI = 'localhost:8080/simulation'; moved to service
   
   constructor(simulationService:SimulationService, router:Router) { }
