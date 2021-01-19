@@ -18,44 +18,19 @@ export class SimulationDashboardComponent implements OnInit {
     var produzentenColour = 'rgb(0, 153, 255)';
     var kundenColour = 'rgb(153, 51, 255)';
 
-    var optionsBar = {
-        scales: {
+    var options = {
         responsive: true,
         title: {
-            text: "Kapitalranking",
-            display: true,
+            display: false,
           },
         legend: {
-          display: true,
+          display: false,
         },
           yAxes: [{
             ticks: {
               beginAtZero: true
             }
           }]
-        }
-      };
-
-    var optionsPie = {
-        responsive: true,
-        title: {
-            text: "Kapitalaufteilung",
-            display: true,
-          },
-        legend: {
-          display: false,
-        }
-      };
-
-    var data = {
-        datasets: [{
-            data: [10, 20, 30]
-        }],
-        labels: [
-            'Red',
-            'Yellow',
-            'Blue'
-        ]
     };
     
   var gesamtZahlen = new Chart("gesamtZahlen", {
@@ -72,7 +47,7 @@ export class SimulationDashboardComponent implements OnInit {
           ],
         }]
       },
-      options: optionsBar
+      options: options
     });
   
   var gesamtVermoegen = new Chart("gesamtVermoegen", {
@@ -100,7 +75,7 @@ export class SimulationDashboardComponent implements OnInit {
         },
     ]
     },
-    options: optionsBar
+    options: options
   });
   
   var KapitalrankingL = new Chart("KapitalrankingL", {
@@ -116,16 +91,7 @@ export class SimulationDashboardComponent implements OnInit {
             borderWidth: 1
         }]
     },
-    options: {
-        responsive: true,
-        title: {
-            text: "Kapitalranking Lieferanten",
-            display: true,
-          },
-        legend: {
-          display: false,
-        }
-      }
+    options: options
   });
 
   var KapiralrankingPU = new Chart("KapitalrankingPU", {
@@ -140,40 +106,7 @@ export class SimulationDashboardComponent implements OnInit {
         borderWidth: 1
       }]
     },
-    options: {
-        responsive: true,
-        title: {
-            text: "Kapitalranking Produktionsunternehmen",
-            display: true,
-          },
-        legend: {
-          display: false,
-        }
-      }
-  });
-
-  var KapitalrankingK = new Chart("KapitalrankingK", {
-    type: 'bar',
-    data: {
-      labels: ['K1', 'K2', 'K3', 'K4', 'K5', 'K6', 'K7', 'K8', 'K9', 'K10'],
-      datasets: [{
-        label: 'Kapitalranking Kunden',
-        data: [28, 70, 89, 108, 108, 120, 150, 176, 180, 240],
-        backgroundColor: 
-            kundenColour,
-        borderWidth: 1
-      }]
-    },
-    options: {
-        responsive: true,
-        title: {
-            text: "Kapitalranking Kunden",
-            display: true,
-          },
-        legend: {
-          display: false,
-        }
-      }
+    options: options
   });
 
   var BiggestL = new Chart("BiggestL", {
@@ -189,7 +122,7 @@ export class SimulationDashboardComponent implements OnInit {
             borderWidth: 1
         }]
     },
-    options: optionsPie,
+    options: options
   });
 
     var BiggestPU = new Chart("BiggestPU", {
@@ -204,23 +137,8 @@ export class SimulationDashboardComponent implements OnInit {
         borderWidth: 1
       }]
     },
-    options: optionsPie
+    options: options
   });
-
-  var BiggestK = new Chart("BiggestK", {
-    type: 'pie',
-    data: {
-      labels: ['K1', 'K2', 'K3', 'K4', 'K5', 'K6', 'K7', 'K8', 'K9', 'K10'],
-      datasets: [{
-        label: 'Input Kunden',
-        data: [28, 70, 89, 108, 108, 120, 150, 176, 180, 240],
-        backgroundColor: 
-            kundenColour,
-        borderWidth: 1
-      }]
-    },
-    options: optionsPie
-  });
-
+  
 }
 }
