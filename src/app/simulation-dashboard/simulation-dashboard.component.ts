@@ -8,12 +8,12 @@ import { Chart } from 'node_modules/chart.js';
     styleUrls: ['./simulation-dashboard.component.css']
 })
 export class SimulationDashboardComponent implements OnInit {
-    
+
     constructor() {}
-    
+
     @Input() simulation: Simulation;
     ngOnInit(): void {
-        
+
     var lieferantenColour = 'rgb(77, 225, 255)';
     var produzentenColour = 'rgb(0, 153, 255)';
     var kundenColour = 'rgb(153, 51, 255)';
@@ -32,7 +32,7 @@ export class SimulationDashboardComponent implements OnInit {
             }
           }]
     };
-    
+
   var gesamtZahlen = new Chart("gesamtZahlen", {
       type: 'bar',
       data: {
@@ -49,7 +49,7 @@ export class SimulationDashboardComponent implements OnInit {
       },
       options: options
     });
-  
+
   var gesamtVermoegen = new Chart("gesamtVermoegen", {
     type: 'line',
     data: {
@@ -77,7 +77,7 @@ export class SimulationDashboardComponent implements OnInit {
     },
     options: options
   });
-  
+
   var KapitalrankingL = new Chart("KapitalrankingL", {
     type: 'bar',
     data: {
@@ -101,7 +101,7 @@ export class SimulationDashboardComponent implements OnInit {
       datasets: [{
         label: 'Kapitalranking Produktionsunternehmen',
         data: [289, 270, 230, 208, 208, 170, 150, 146, 100, 40],
-        backgroundColor: 
+        backgroundColor:
             produzentenColour,
         borderWidth: 1
       }]
@@ -132,7 +132,7 @@ export class SimulationDashboardComponent implements OnInit {
       datasets: [{
         label: 'Kapitalranking Produktionsunternehmen',
         data: [289, 270, 230, 208, 208, 170, 150, 146, 100, 40],
-        backgroundColor: 
+        backgroundColor:
             produzentenColour,
         borderWidth: 1
       }]

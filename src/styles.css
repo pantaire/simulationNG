@@ -1,7 +1,5 @@
 @@ -0,0 +1,204 @@
 html{
-  background-color: #313036 !important;
-  background: linear-gradient(to bottom, #51FDFD, #902EFD)!important;
   position: relative!important;
   min-height: 100%!important;
   font-family: Benton Sans, Geneva, sans-serif;
@@ -9,14 +7,19 @@ html{
   font-size: 18px;
   font-weight: 800!important;
 }
+.container{
+  margin-bottom: 012%!important;
+}
 
 body{
+  position: relative!important;
   background: linear-gradient(to bottom, #33323a, #1e1e1e)!important;
   background-color: #313036 !important;
   font-family: 'Benton Sans', Benton Sans!important;
   margin: 1!important;
   overflow-x: hidden!important;
   color: #FDFDFF!important;
+
 }
 
 div{
@@ -42,6 +45,19 @@ font-style: normal;
 font-variant: normal;
 text-transform: none;
 }
+#input{
+  padding: 5px;
+  font-size: 20px;
+  border-width: 2px;
+  border-color: #902EFD;
+  background-color: #e6e6e6;
+  color: #000000;
+  border-style: double;
+  border-radius: 30px;
+  box-shadow: 0px 0px 14px rgba(66,66,66,.75);
+  text-shadow: 0px 0px 5px rgba(66,66,66,.75);
+  text-align: center;
+}
 
 button{
    background: #51FDFD !important;
@@ -54,7 +70,7 @@ button{
    -moz-border-radius: 100px!important;
    border-radius: 100px!important;
    color: #FDFDFF!important;
-   font-family: Benton Sans!important;
+   font-family: Verdana!important;
    font-size: 100%!important;
    font-weight: 600!important;
    padding: 1%!important;
@@ -62,7 +78,7 @@ button{
    -moz-box-shadow: 1px 1px 20px 0 #000000!important;
    box-shadow: 1px 1px 20px 0 #000000!important;
    text-shadow: 0 0 20px #000000!important;
-   border: solid #51FDFD 3px!important;
+   border: solid #902EFD 3px!important;
    text-decoration: none!important;
    display: inline-block!important;
    cursor: pointer!important;
