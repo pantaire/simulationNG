@@ -125,7 +125,7 @@ export class SimulationDashboardComponent implements OnInit {
     options: options
   });
 
-    var BiggestPU = new Chart("BiggestPU", {
+  var BiggestPU = new Chart("BiggestPU", {
     type: 'pie',
     data: {
       labels: ['P1', 'P2', 'P3', 'P4', 'P5', 'P6', 'P7', 'P8', 'P9', 'P10'],
@@ -139,6 +139,6 @@ export class SimulationDashboardComponent implements OnInit {
     },
     options: options
   });
-  
+
 }
 }
