@@ -36,7 +36,7 @@ export class SimulationDashboardComponent implements OnInit {
         }
       };
 
-      var optionsPie = {
+    var optionsPie = {
         responsive: true,
         title: {
             text: "Kapitalaufteilung",
@@ -46,7 +46,6 @@ export class SimulationDashboardComponent implements OnInit {
           display: false,
         }
       };
-
 
     var data = {
         datasets: [{

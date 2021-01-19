@@ -26,102 +26,79 @@
       </div>
       <div class="col-sm">
         <label for="lieferantenanzahl">Anzahl Lieferanten:</label>
-        <input required name="lieferantenanzahl" [(ngModel)]="simulationInput.lieferantenanzahl" placeholder="0.5" type="number" class="form-control">
+        <input required name="lieferantenanzahl" [(ngModel)]="simulationInput.lieferantenanzahl" placeholder="80" type="number" class="form-control">
       </div>
       <div class="col-sm">
         <label for="kundenanzahl">Anzahl Kunden:</label>
         <input required name="kundenanzahl" [(ngModel)]="simulationInput.kundenanzahl" placeholder="300" type="number" class="form-control">
       </div>
     </div> 
-    <br>
     <hr>
-    <br>
     <div class="row">
       <div class="col-sm">
-        <label for="startKapitalPUMin">Minimalkapital Produzenten:</label>
-        <input required name="startKapitalPUMin" [(ngModel)]="simulationInput.startKapitalPUMin" placeholder="10000" type="number" class="form-control">
+        <label for="startKapitalPUMin">Kapital Produzenten:</label>
+        <div style="display: inline-flex;">
+            <input style="width: 50%" required name="startKapitalPUMin" [(ngModel)]="simulationInput.startKapitalPUMin" placeholder="Min" type="number" class="form-control small">  
+            <span> - </span>
+            <input style="width: 50%" required name="startKapitalPUMax" [(ngModel)]="simulationInput.startKapitalPUMax" placeholder="Max" type="number" class="form-control">
+        </div>
       </div>
       <div class="col-sm">
-        <label for="startKapitalLMin">Minimalkapital Lieferanten:</label>
-        <input required name="startKapitalLMin" [(ngModel)]="simulationInput.startKapitalLMin" placeholder="10000" type="number" class="form-control">
+        <label for="startKapitalLMin">Kapital Lieferanten:</label>
+        <div style="display: inline-flex;">
+            <input style="width: 50%" required name="startKapitalLMin" [(ngModel)]="simulationInput.startKapitalLMin" placeholder="Min" type="number" class="form-control">
+            <span> - </span>
+            <input style="width: 50%" required name="startKapitalKMax" [(ngModel)]="simulationInput.startKapitalLMax" placeholder="Max" type="number" class="form-control">
+        </div>
       </div>
       <div class="col-sm">
-        <label for="startKapitalKMin">Minimalkapital Kunden:</label>
-        <input required name="startKapitalKMin" [(ngModel)]="simulationInput.startKapitalKMin" placeholder="10" type="number" class="form-control">
+        <label for="startKapitalKMin">Kapital Kunden:</label>
+        <div style="display: inline-flex;">
+            <input style="width: 50%" required name="startKapitalKMin" [(ngModel)]="simulationInput.startKapitalKMin" placeholder="Min" type="number" class="form-control">
+            <span> - </span>
+            <input style="width: 50%" required name="startKapitalLMax" [(ngModel)]="simulationInput.startKapitalKMax" placeholder="Max" type="number" class="form-control">
+        </div>
       </div>
     </div>
-    <br>
-    <div class="row">
-      <div class="col-sm">
-        <label for="startKapitalPUMax">Maximalkapital Produzenten:</label>
-        <input required name="startKapitalPUMax" [(ngModel)]="simulationInput.startKapitalPUMax" placeholder="1000000" type="number" class="form-control">
-      </div>
-      <div class="col-sm">
-        <label for="startKapitalLMax">Maximalkapital Lieferanten:</label>
-        <input required name="startKapitalLMax" [(ngModel)]="simulationInput.startKapitalLMax" placeholder="1000000" type="number" class="form-control">
-      </div>
-      <div class="col-sm">
-        <label for="startKapitalKMax">Maximalkapital Kunden:</label>
-        <input required name="startKapitalKMax" [(ngModel)]="simulationInput.startKapitalLMax" placeholder="10000" type="number" class="form-control">
-      </div>
-    </div>
-    <br>
     <hr>
-    <br>
     <div class="row">
       <div class="col-sm">
-        <label for="startKapitalPUMin">Mindestproduktionsmenge Produzenten:</label>
-        <input required name="startKapitalPUMin" [(ngModel)]="simulationInput.startKapitalPUMin" placeholder="40" type="number" class="form-control">
+        <label for="startKapitalPUMin">Produktionsmenge Produzenten:</label>
+        <div style="display: inline-flex">
+            <input style="width: 50%" required name="startKapitalPUMin" [(ngModel)]="simulationInput.produktionsmengePUMin" placeholder="Min" type="number" class="form-control">
+            <span> - </span>
+            <input style="width: 50%" required name="startKapitalPUMax" [(ngModel)]="simulationInput.produktionsmengePUMax" placeholder="Max" type="number" class="form-control">
+        </div>
       </div>
       <div class="col-sm">
-        <label for="startKapitalLMin">Mindestproduktionsmenge Lieferanten:</label>
-        <input required name="startKapitalLMin" [(ngModel)]="simulationInput.startKapitalLMin" placeholder="20" type="number" class="form-control">
-      </div>
-      <div class="col-sm">
-        <!--label for="kauflustKunden">Kauflust Kunden:</label>
-        <input required name="kauflustKunden" [(ngModel)]="kauflustKunden" placeholder="0.5" type="range" class="custom-range" min="0" max="1"
-          value="kauflustKunden" step="0.01"-->
-      </div>
-    </div>
-    <br>
-    <div class="row">
-      <div class="col-sm">
-        <label for="produktionsmengePUMax">Maximalproduktionsmenge Produzenten:</label>
-        <input required name="produktionsmengePUMax" [(ngModel)]="simulationInput.produktionsmengePUMax" placeholder="2000" type="number" class="form-control">
-      </div>
-      <div class="col-sm">
-        <label for="produktionsmengeLMax">Maximalproduktionsmenge Lieferanten:</label>
-        <input required name="produktionsmengeLMax" [(ngModel)]="simulationInput.produktionsmengeLMax" placeholder="8000" type="number" class="form-control">
+        <label for="startKapitalLMin">Produktionsmenge Lieferanten:</label>
+        <div style="display: inline-flex;">
+            <input style="width: 50%" required name="startKapitalLMin" [(ngModel)]="simulationInput.produktionsmengeLMin" placeholder="Min" type="number" class="form-control">
+            <span> - </span>
+            <input style="width: 50%" required name="startKapitalLMax" [(ngModel)]="simulationInput.produktionsmengeLMax" placeholder="Max" type="number" class="form-control">
+        </div>
       </div>
       <div class="col-sm">
         <!--empty-->
       </div>
-    </div>
-    <br>
+    </div>     
     <hr>
-    <br>
     <div class="row">
       <div class="col-sm">
-        <label for="lagerPUMin">Mindestlagerkapazität Produzenten:</label>
-        <input required name="lagerPUMin" [(ngModel)]="simulationInput.lagerPUMin" placeholder="50" type="number" class="form-control">
+        <label for="lagerPUMin">Lagerkapazität Produzenten:</label>
+        <div style="display: inline-flex;">
+            <input style="width: 50%;" required name="lagerPUMin" [(ngModel)]="simulationInput.lagerPUMin" placeholder="50" type="number" class="form-control">
+            <span> - </span>
+            <input style="width: 50%;" required name="lagerPUMax" [(ngModel)]="simulationInput.lagerPUMax" placeholder="50" type="number" class="form-control">
+        </div>
       </div>
       <div class="col-sm">
-        <label for="lagerLMin">Mindestlagerkapazität Lieferanten:</label>
-        <input required name="lagerLMin" [(ngModel)]="simulationInput.lagerLMin" placeholder="30" type="number" class="form-control">
-      </div>
-      <div class="col-sm">
-       <!--empty-->
-      </div>
-    </div>
-    <br>
-    <div class="row">
-      <div class="col-sm">
-        <label for="lagerPUMax">Mindestlagerkapazität Produzenten:</label>
-        <input required name="lagerPUMax" [(ngModel)]="simulationInput.lagerPUMax" placeholder="80" type="number" class="form-control">
-      </div>
-      <div class="col-sm">
-        <label for="lagerLMax">Mindestlagerkapazität Lieferanten:</label>
-        <input required name="lagerLMax" [(ngModel)]="simulationInput.lagerLMax" placeholder="60" type="number" class="form-control">
+        <label for="lagerLMin">Lagerkapazität Lieferanten:</label>
+        <div style="display: inline-flex;">
+            <input style="width: 50%;" required name="lagerLMin" [(ngModel)]="simulationInput.lagerLMin" placeholder="30" type="number" class="form-control">
+            <span> - </span>
+            <input style="width: 50%;" required name="lagerLMax" [(ngModel)]="simulationInput.lagerLMax" placeholder="50" type="number" class="form-control">
+        </div>
       </div>
       <div class="col-sm">
        <!--empty-->
@@ -130,7 +107,7 @@
     <br>
     <div class="text-center">
       <!--a routerLink="/dashboard"-->
-      <button *ngIf="simulationInput" type="submit">
+      <button type="submit">
           Simulation starten
         </button>
         <!--/a-->
