@@ -4,61 +4,23 @@
     <div>
       <!--muss für jede Simulation festgelegt werden-->
       <form #simulationInput="ngForm" (ngSubmit)="onSubmit(simulationInput.value)">
-          <div class="">
-              <div class="row">
-                  <div class="col-sm">
-                      <label for="rundenanzahl">Anzahl Runden:</label>
-                      <input required name="rundenanzahl" id="input" [(ngModel)]="simulationInput.rundenanzahl" placeholder="1000"
-                      type="number" class="form-control">
-                    </div>
-                    <div class="col-sm" >
-                        <label for="eventWahrscheinlichkeit">Eventwahrscheinlichkeit:</label> <span>
-                            {{ simulationInput.eventWahrscheinlichkeit * 100 | number:'1.0-0' }} %</span>
-                            <input required name="eventWahrscheinlichkeit" [(ngModel)]="simulationInput.eventWahrscheinlichkeit"
-                            placeholder="0.5" type="range" class="custom-range" min="0" max="1" value="eventWahrscheinlichkeit"
-                            step="0.01">
-                        </div>
-                    </div>
-                </div>
-        
-        <!--KUNDE-->
-        <div>
-          <h2>Neuer Kunde</h2>
+        <div class="">
           <div class="row">
             <div class="col-sm">
-              <label for="name">Name</label>
-              <input required name="kunde.name" id="input" [(ngModel)]="simulationInput.kunde.name" placeholder="Anna Gruber"
-                type="number" class="form-control">
-            </div>
-            <div class="col-sm">
-              <label for="kapital">Kapital</label>
-              <input required name="kunde.kapital" id="input" [(ngModel)]="simulationInput.kunde.kapital" placeholder="1000"
-                type="number" class="form-control">
-            </div>
-            <div class="col-sm">
-              <label for="einkommen">Einkommen</label>
-              <input required name="kunde.einkommen" id="input" [(ngModel)]="simulationInput.kunde.einkommen" placeholder="1000"
-                type="number" class="form-control">
-            </div>
-            <div class="col-sm">
-              <label for="lebenskosten">Lebenskosten</label>
-              <input required name="kunde.lebenskosten" id="input" [(ngModel)]="simulationInput.kunde.lebenskosten"
+              <label for="rundenanzahl">Anzahl Runden:</label>
+              <input required name="rundenanzahl" id="input" [(ngModel)]="simulationInput.rundenanzahl"
                 placeholder="1000" type="number" class="form-control">
             </div>
             <div class="col-sm">
-              <label for="kauflust">Kauflust</label>
-              <input required name="kunde.kauflust" id="input" [(ngModel)]="simulationInput.kunde.kauflust" placeholder="1000"
-                type="number" class="form-control">
-            </div>
-            <div class="col-sm">
-              <label for="kaufpräferenz">Kaufpräferenz</label>
-              <select required name="kunde.kaufpref" id="input" [(ngModel)]="simulationInput.kunde.kaufpref" type="dropdown" class="form-control">
-                <option value="1" selected>Chips</option>
-                <option value="2">Schokolade</option>
-            </select>
+              <label for="eventWahrscheinlichkeit">Eventwahrscheinlichkeit:</label> <span>
+                {{ simulationInput.eventWahrscheinlichkeit * 100 | number:'1.0-0' }} %</span>
+              <input required name="eventWahrscheinlichkeit" [(ngModel)]="simulationInput.eventWahrscheinlichkeit"
+                placeholder="0.5" type="range" class="custom-range" min="0" max="1" value="eventWahrscheinlichkeit"
+                step="0.01">
             </div>
           </div>
         </div>
+
 
         <!--LIEFERANT-->
         <div>
@@ -66,18 +28,18 @@
           <div class="row">
             <div class="col-sm">
               <label for="name">Name</label>
-              <input required name="lieferant.name" id="input" [(ngModel)]="simulationInput.lieferant.name" placeholder="Spedition Lightspeed"
-                type="number" class="form-control">
+              <input required name="lieferant.name" id="input" [(ngModel)]="simulationInput.lieferant.name"
+                placeholder="Spedition Lightspeed" type="number" class="form-control">
             </div>
             <div class="col-sm">
               <label for="kapital">Kapital</label>
-              <input required name="lieferant.kapital" id="input" [(ngModel)]="simulationInput.lieferant.kapital" placeholder="1000"
-                type="number" class="form-control">
+              <input required name="lieferant.kapital" id="input" [(ngModel)]="simulationInput.lieferant.kapital"
+                placeholder="1000" type="number" class="form-control">
             </div>
             <div class="col-sm">
               <label for="kosten">Kosten</label>
-              <input required name="lieferant.kosten" id="input" [(ngModel)]="simulationInput.lieferant.kosten" placeholder="1000"
-                type="number" class="form-control">
+              <input required name="lieferant.kosten" id="input" [(ngModel)]="simulationInput.lieferant.kosten"
+                placeholder="1000" type="number" class="form-control">
             </div>
             <div class="col-sm">
               <label for="preis">Preis</label>
@@ -85,28 +47,37 @@
                 placeholder="1000" type="number" class="form-control">
             </div>
             <div class="col-sm">
-                <label for="lager">Lagerkapazität</label>
-                <input required name="lieferant.lager" id="input" [(ngModel)]="simulationInput.lieferant.lager" placeholder="1000"
-                  type="number" class="form-control">
-              </div>
+              <label for="lager">Lagerkapazität</label>
+              <input required name="lieferant.lager" id="input" [(ngModel)]="simulationInput.lieferant.lager"
+                placeholder="1000" type="number" class="form-control">
+            </div>
             <div class="col-sm">
               <label for="lagerMax">max. Lagerkap.</label>
-              <input required name="lieferant.lagerMax" id="input" [(ngModel)]="simulationInput.lieferant.lagerMax" placeholder="1000"
-                type="number" class="form-control">
+              <input required name="lieferant.lagerMax" id="input" [(ngModel)]="simulationInput.lieferant.lagerMax"
+                placeholder="1000" type="number" class="form-control">
             </div>
           </div>
         </div>
-        <div>
+        <div class="text-right">
+          <!--a routerLink="/dashboard"-->
+          <br>
+          <button type="submit">
+            Weiteren Lieferanten hinzufügen
+          </button>
+          <!--/a-->
+          <br>
+        </div>
+
 
         <!--UNTERNEHMEN-->
         <div>
-        <h2>Neues Unternehmen</h2>
-        <div class="row">
-          <div class="col-sm">
-            <label for="name">Name</label>
-            <input required name="unternehmen.name" id="input" [(ngModel)]="simulationInput.unternehmen.name" placeholder="Tante Emma"
-              type="number" class="form-control">
-          </div>
+          <h2>Neues Unternehmen</h2>
+          <div class="row">
+            <div class="col-sm">
+              <label for="name">Name</label>
+              <input required name="unternehmen.name" id="input" [(ngModel)]="simulationInput.unternehmen.name"
+                placeholder="Tante Emma" type="number" class="form-control">
+            </div>
             <div class="col-sm">
               <label for="währung">Währung</label>
               <select required name="unternehmen.currency" id="input" [(ngModel)]="simulationInput.unternehmen.currency"
@@ -116,32 +87,90 @@
                 <option value="3" selected>CHF</option>
                 <option value="4" selected>GBP</option>
               </select>
+            </div>
+            <div class="col-sm">
+              <label for="kapital">Kapital</label>
+              <input required name="unternehmen.kapital" id="input" [(ngModel)]="simulationInput.unternehmen.kapital"
+                placeholder="1000" type="number" class="form-control">
+            </div>
+            <div class="col-sm">
+              <label for="kaufinteresse">Kaufinteresse</label>
+              <input required name="unternehmen.kaufinteresse" id="input"
+                [(ngModel)]="simulationInput.unternehmen.kaufinteresse" placeholder="1000" type="number"
+                class="form-control">
+            </div>
+            <div class="col-sm">
+              <label for="produktionsmenge">Produktionsmenge</label>
+              <input required name="unternehmen.produktionsmenge" id="input"
+                [(ngModel)]="simulationInput.unternehmen.produktionsmenge" placeholder="1000" type="number"
+                class="form-control">
+            </div>
+            <div class="col-sm">
+              <label for="kosten">Kosten</label>
+              <input required name="unternehmen.kosten" id="input" [(ngModel)]="simulationInput.unternehmen.kosten"
+                placeholder="1000" type="number" class="form-control">
+            </div>
+            <div class="col-sm">
+              <label for="lagerkapazität">Lagerkapazität</label>
+              <input required name="kunde.lagerkap" id="input" [(ngModel)]="simulationInput.unternehmen.lagerkap"
+                placeholder="1000" type="number" class="form-control">
+            </div>
           </div>
-          <div class="col-sm">
-            <label for="kapital">Kapital</label>
-            <input required name="unternehmen.kapital" id="input" [(ngModel)]="simulationInput.unternehmen.kapital" placeholder="1000"
-              type="number" class="form-control">
-          </div>
-          <div class="col-sm">
-            <label for="kaufinteresse">Kaufinteresse</label>
-            <input required name="unternehmen.kaufinteresse" id="input" [(ngModel)]="simulationInput.unternehmen.kaufinteresse" placeholder="1000"
-              type="number" class="form-control">
-          </div>
-          <div class="col-sm">
-            <label for="produktionsmenge">Produktionsmenge</label>
-            <input required name="unternehmen.produktionsmenge" id="input" [(ngModel)]="simulationInput.unternehmen.produktionsmenge"
-              placeholder="1000" type="number" class="form-control">
-          </div>
-          <div class="col-sm">
-            <label for="kosten">Kosten</label>
-            <input required name="unternehmen.kosten" id="input" [(ngModel)]="simulationInput.unternehmen.kosten" placeholder="1000"
-              type="number" class="form-control">
-          </div>
-          <div class="col-sm">
-            <label for="lagerkapazität">Lagerkapazität</label>
-            <input required name="kunde.lagerkap" id="input" [(ngModel)]="simulationInput.unternehmen.lagerkap" placeholder="1000"
-              type="number" class="form-control">
+          <div class="text-right">
+            <!--a routerLink="/dashboard"-->
+            <br>
+            <button type="submit">
+              Weiteres Unternehmen hinzufügen
+            </button>
+            <!--/a-->
+            <br>
           </div>
         </div>
-    </div>
+        <!--KUNDE-->
+        <div>
+          <h2>Neuer Kunde</h2>
+          <div class="row">
+            <div class="col-sm">
+              <label for="name">Name</label>
+              <input required name="kunde.name" id="input" [(ngModel)]="simulationInput.kunde.name"
+                placeholder="Anna Gruber" type="number" class="form-control">
+            </div>
+            <div class="col-sm">
+              <label for="kapital">Kapital</label>
+              <input required name="kunde.kapital" id="input" [(ngModel)]="simulationInput.kunde.kapital"
+                placeholder="1000" type="number" class="form-control">
+            </div>
+            <div class="col-sm">
+              <label for="einkommen">Einkommen</label>
+              <input required name="kunde.einkommen" id="input" [(ngModel)]="simulationInput.kunde.einkommen"
+                placeholder="1000" type="number" class="form-control">
+            </div>
+            <div class="col-sm">
+              <label for="lebenskosten">Lebenskosten</label>
+              <input required name="kunde.lebenskosten" id="input" [(ngModel)]="simulationInput.kunde.lebenskosten"
+                placeholder="1000" type="number" class="form-control">
+            </div>
+            <div class="col-sm">
+              <label for="kauflust">Kauflust</label>
+              <input required name="kunde.kauflust" id="input" [(ngModel)]="simulationInput.kunde.kauflust"
+                placeholder="1000" type="number" class="form-control">
+            </div>
+            <div class="col-sm">
+              <label for="kaufpräferenz">Kaufpräferenz</label>
+              <select required name="kunde.kaufpref" id="input" [(ngModel)]="simulationInput.kunde.kaufpref"
+                type="dropdown" class="form-control">
+                <option value="1" selected>Chips</option>
+                <option value="2">Schokolade</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="text-right">
+          <!--a routerLink="/dashboard"-->
+          <br>
+          <button type="submit">
+            Weiteren Kunden hinzufügen
+          </button>
+          <!--/a-->
+          <br>
         </div>

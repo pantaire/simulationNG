@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Simulation } from '../../models/simulation';
 import { Chart } from 'node_modules/chart.js';
+
+import { Simulation } from '../../models/simulation';
+import { SimulationService } from '../simulation.service';
 
 @Component({
     selector: 'app-simulation-dashboard',
@@ -9,7 +11,7 @@ import { Chart } from 'node_modules/chart.js';
 })
 export class SimulationDashboardComponent implements OnInit {
 
-    constructor() {}
+    constructor(private service:SimulationService) {}
 
     @Input() simulation: Simulation;
     ngOnInit(): void {
@@ -17,6 +19,14 @@ export class SimulationDashboardComponent implements OnInit {
     var lieferantenColour = 'rgb(77, 225, 255)';
     var produzentenColour = 'rgb(0, 153, 255)';
     var kundenColour = 'rgb(153, 51, 255)';
+
+
+        this.service.httpGetSimulation().subscribe(response => {
+            this.simulation = response;
+          });
+  
+    
+   
 
     var options = {
         responsive: true,

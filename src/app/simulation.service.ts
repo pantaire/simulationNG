@@ -4,28 +4,21 @@ import { Observable } from 'rxjs';
 
 import { Simulation } from '../models/simulation';
 
-const httpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type': 'application/json'
-    })
-  }
-
 @Injectable({
   providedIn: 'root'
 })
+
 export class SimulationService {
-
-    //instantiate simulationInput after submitting
-
+    
+    constructor(private http:HttpClient) { }
   
-
-    simulationUrl:string = 'localhost:8080/simulation';
+    headers = new HttpHeaders().set('content-type', 'application/json');
+    simulationAPI:string = 'http://localhost:8080/simulation';
     simulation:Simulation;
 
-    constructor(private http:HttpClient) { }
     
-    //liest Input aus Formular aus
-    getSimulation() {
+    //liest Input aus Formular aus, derzeit noch in onSubmit()
+    getSimulation(simulation) {
         return this.simulation =  {
             rundenanzahl: this.simulation.rundenanzahl,
             eventWahrscheinlichkeit: this.simulation.eventWahrscheinlichkeit,
@@ -51,12 +44,12 @@ export class SimulationService {
     
     // Kommunikation zu Backend, Anfragen der Simulationsdaten
     httpGetSimulation():Observable<Simulation> {
-        return this.http.get<Simulation>(this.simulationUrl);
+        return this.http.get<Simulation>(this.simulationAPI);
     }
 
     // Kommunikation zu Backend, Bereitstellen der Simulationseingabe
-    /* httpPostSimulation(simulation:Simulation):Observable<Simulation> {
-        return this.http.post(this.simulationUrl, simulation, httpOptions);
-    } */
+     httpPostSimulation(simulation:Simulation) {
+        return this.http.post(this.simulationAPI, JSON.stringify(simulation));
+    } 
 
 }
