@@ -17,6 +17,5 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ### ...regarding this project:
 
-Feel free to reach out to any maintainers via github.  
-Since this project was done 
+Feel free to reach out to any maintainers via github for further documentation, explanation or helpful tips.
 
