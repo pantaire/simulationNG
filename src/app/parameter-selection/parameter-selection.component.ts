@@ -60,7 +60,5 @@ export class ParameterSelectionComponent implements OnInit {
     console.log("simInput:" + simulationInput.value);
     this.simulationService.httpPostSimulation(this.simulation).subscribe(() => {});
     this.router.navigate(['/dashboard']);
-
-    
   }
 }

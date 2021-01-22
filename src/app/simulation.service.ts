@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
 
 import { Simulation } from '../models/simulation';
 
@@ -41,13 +40,9 @@ export class SimulationService {
             lagerPUMax: this.simulation.lagerPUMax 
         }
     }
-    
-    // Kommunikation zu Backend, Anfragen der Simulationsdaten
-    httpGetSimulation():Observable<Simulation> {
-        return this.http.get<Simulation>(this.simulationAPI);
-    }
 
-    // Kommunikation zu Backend, Bereitstellen der Simulationseingabe
+
+    // Kommunikation zu Backend, Bereitstellen der Simulationseingabe - Antwort liefert Simulation mit Daten für Statistik zurück
      httpPostSimulation(simulation:Simulation) {
         return this.http.post(this.simulationAPI, simulation);
     } 

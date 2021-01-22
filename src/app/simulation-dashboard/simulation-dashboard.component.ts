@@ -43,7 +43,7 @@ export class SimulationDashboardComponent implements OnInit {
           }]
     };
 
-  var gesamtZahlen = new Chart("gesamtZahlen", {
+  new Chart("gesamtZahlen", {
       type: 'bar',
       data: {
         labels: ['Lieferanten', 'Produktionsunternehmen', 'Kunden'],
@@ -60,52 +60,83 @@ export class SimulationDashboardComponent implements OnInit {
       options: options
     });
 
-  var gesamtVermoegen = new Chart("gesamtVermoegen", {
-    type: 'line',
-    data: {
-      labels: ['10', '20', '30', '40', '50', '60', '70', '80', '90', '100'],
-      datasets: [
-        {
-        label: 'Gesamtvermögen Lieferanten',
-        data: [120, 190, 170, 128, 239, 111, 120, 90, 100, 140],
-        borderColor:
-            lieferantenColour,
+    new Chart("gesamtVermoegen", {
+        type: 'line',
+        data: {
+        labels: ['10', '20', '30', '40', '50', '60', '70', '80', '90', '100'],
+        datasets: [
+            {
+            label: 'Gesamtvermögen Lieferanten',
+            data: [120, 190, 170, 128, 239, 111, 120, 90, 100, 140],
+            borderColor:
+                lieferantenColour,
+            },
+            {
+            label: 'Gesamtvermögen Produzenten',
+            data: [200, 239, 111, 120, 90, 100, 190, 170, 128, 10],
+            borderColor:
+                produzentenColour,
+            },
+            {
+            label: 'Gesamtvermögen Kunden',
+            data: [130, 90, 100, 190, 170, 128, 140, 120, 239, 111],
+            borderColor:
+                kundenColour,
+            },
+        ]
         },
-        {
-        label: 'Gesamtvermögen Produzenten',
-        data: [200, 239, 111, 120, 90, 100, 190, 170, 128, 10],
-        borderColor:
-            produzentenColour,
-        },
-        {
-        label: 'Gesamtvermögen Kunden',
-        data: [130, 90, 100, 190, 170, 128, 140, 120, 239, 111],
-        borderColor:
-            kundenColour,
-        },
-    ]
-    },
-    options: options
-  });
+        options: options
+    });
 
-  var KapitalrankingL = new Chart("KapitalrankingL", {
-    type: 'bar',
-    data: {
-      labels: ['L1', 'L2', 'L3', 'L4', 'L5', 'L6', 'L7', 'L8', 'L9', 'L10'],
-      datasets: [{
-          label: 'Kapitalranking Lieferanten',
-          fillColor: lieferantenColour,
-          data: [289, 270, 230, 208, 208, 170, 150, 146, 100, 40],
-          backgroundColor:
-              lieferantenColour,
+    new Chart("KapitalrankingL", {
+        type: 'bar',
+        data: {
+        labels: ['L1', 'L2', 'L3', 'L4', 'L5', 'L6', 'L7', 'L8', 'L9', 'L10'],
+        datasets: [{
+            label: 'Kapitalranking Lieferanten',
+            fillColor: lieferantenColour,
+            data: [289, 270, 230, 208, 208, 170, 150, 146, 100, 40],
+            backgroundColor:
+                lieferantenColour,
+                borderWidth: 1
+            }]
+        },
+        options: options
+    });
+
+    new Chart("KapitalrankingPU", {
+        type: 'bar',
+        data: {
+        labels: ['P1', 'P2', 'P3', 'P4', 'P5', 'P6', 'P7', 'P8', 'P9', 'P10'],
+        datasets: [{
+            label: 'Kapitalranking Produktionsunternehmen',
+            data: [289, 270, 230, 208, 208, 170, 150, 146, 100, 40],
+            backgroundColor:
+                produzentenColour,
             borderWidth: 1
         }]
-    },
-    options: options
-  });
+        },
+        options: options
+    });
 
-  var KapiralrankingPU = new Chart("KapitalrankingPU", {
-    type: 'bar',
+    new Chart("BiggestL", {
+        type: 'pie',
+        data: {
+        labels: ['L1', 'L2', 'L3', 'L4', 'L5', 'L6', 'L7', 'L8', 'L9', 'L10'],
+        datasets: [{
+            label: 'Kapitalranking Lieferanten',
+            fillColor: lieferantenColour,
+            data: [289, 270, 230, 208, 208, 170, 150, 146, 100, 40],
+            backgroundColor:
+                lieferantenColour,
+                borderWidth: 1
+            }]
+        },
+        options: options
+    });
+
+    new Chart("BiggestPU", {
+    type: 'pie',
     data: {
       labels: ['P1', 'P2', 'P3', 'P4', 'P5', 'P6', 'P7', 'P8', 'P9', 'P10'],
       datasets: [{
@@ -117,38 +148,7 @@ export class SimulationDashboardComponent implements OnInit {
       }]
     },
     options: options
-  });
-
-  var BiggestL = new Chart("BiggestL", {
-    type: 'pie',
-    data: {
-      labels: ['L1', 'L2', 'L3', 'L4', 'L5', 'L6', 'L7', 'L8', 'L9', 'L10'],
-      datasets: [{
-          label: 'Kapitalranking Lieferanten',
-          fillColor: lieferantenColour,
-          data: [289, 270, 230, 208, 208, 170, 150, 146, 100, 40],
-          backgroundColor:
-              lieferantenColour,
-            borderWidth: 1
-        }]
-    },
-    options: options
-  });
-
-  var BiggestPU = new Chart("BiggestPU", {
-    type: 'pie',
-    data: {
-      labels: ['P1', 'P2', 'P3', 'P4', 'P5', 'P6', 'P7', 'P8', 'P9', 'P10'],
-      datasets: [{
-        label: 'Kapitalranking Produktionsunternehmen',
-        data: [289, 270, 230, 208, 208, 170, 150, 146, 100, 40],
-        backgroundColor:
-            produzentenColour,
-        borderWidth: 1
-      }]
-    },
-    options: options
-  });
+    });
 
 }
 }
