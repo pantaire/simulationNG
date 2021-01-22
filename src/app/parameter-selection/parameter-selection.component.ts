@@ -32,41 +32,33 @@ export class ParameterSelectionComponent implements OnInit {
   }
 
   onSubmit(simulationInput) {
-      /* const simulation =  {
-        rundenanzahl: this.simulation.rundenanzahl,
-        eventWahrscheinlichkeit: this.simulation.eventWahrscheinlichkeit,
-        lieferantenanzahl: this.simulation.lieferantenanzahl,
-        kundenanzahl: this.simulation.kundenanzahl,
-        produktionsunternehmenanzahl: this.simulation.produktionsunternehmenanzahl,
-        startKapitalKMin: this.simulation.startKapitalKMax,
-        startKapitalKMax: this.simulation.startKapitalKMax,
-        startKapitalPUMin: this.simulation.startKapitalPUMin,
-        startKapitalPUMax: this.simulation.startKapitalPUMax,
-        startKapitalLMin: this.simulation.startKapitalLMin,
-        startKapitalLMax: this.simulation.startKapitalLMax,
-        produktionsmengePUMin: this.simulation.produktionsmengePUMin,
-        produktionsmengePUMax: this.simulation.produktionsmengePUMax,
-        produktionsmengeLMin: this.simulation.produktionsmengeLMin,
-        produktionsmengeLMax: this.simulation.produktionsmengeLMax,
-        lagerLMin: this.simulation.lagerLMin,
-        lagerLMax: this.simulation.lagerLMax,
-        lagerPUMin: this.simulation.lagerPUMin,
-        lagerPUMax: this.simulation.lagerPUMax  
+       this.simulation =  {
+        rundenanzahl: simulationInput.rundenanzahl,
+        eventWahrscheinlichkeit: simulationInput.eventWahrscheinlichkeit,
+        lieferantenanzahl: simulationInput.lieferantenanzahl,
+        kundenanzahl: simulationInput.kundenanzahl,
+        produktionsunternehmenanzahl: simulationInput.produktionsunternehmenanzahl,
+        startKapitalKMin: simulationInput.startKapitalKMax,
+        startKapitalKMax: simulationInput.startKapitalKMax,
+        startKapitalPUMin: simulationInput.startKapitalPUMin,
+        startKapitalPUMax: simulationInput.startKapitalPUMax,
+        startKapitalLMin: simulationInput.startKapitalLMin,
+        startKapitalLMax: simulationInput.startKapitalLMax,
+        produktionsmengePUMin: simulationInput.produktionsmengePUMin,
+        produktionsmengePUMax: simulationInput.produktionsmengePUMax,
+        produktionsmengeLMin: simulationInput.produktionsmengeLMin,
+        produktionsmengeLMax: simulationInput.produktionsmengeLMax,
+        lagerLMin: simulationInput.lagerLMin,
+        lagerLMax: simulationInput.lagerLMax,
+        lagerPUMin: simulationInput.lagerPUMin,
+        lagerPUMax: simulationInput.lagerPUMax  
     }; 
-    */
-
-    /* Use when/if simulationService is implemented 
-    this.simulationService.getSimulation().subscribe(simulation => {
-        this.simulation = simulation;
-    }) */
-    console.log("simulation:" + this.simulation);
-    console.log("simInput:" + simulationInput.value);
-    this.simulationService.httpPostSimulation(this.simulationInput).subscribe(() => {});
     
-    //will be obsolete when/if service is running
-    /* this.http.post(this.simulationAPI, this.simulationInput).toPromise().then((data: any) => {
-        console.log(data);
-    }); */
+
+   // Use when/if simulationService is implemented 
+    console.log(this.simulation);
+    console.log("simInput:" + simulationInput.value);
+    this.simulationService.httpPostSimulation(this.simulation).subscribe(() => {});
     this.router.navigate(['/dashboard']);
 
     

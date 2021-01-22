@@ -49,7 +49,7 @@ export class SimulationService {
 
     // Kommunikation zu Backend, Bereitstellen der Simulationseingabe
      httpPostSimulation(simulation:Simulation) {
-        return this.http.post(this.simulationAPI, JSON.stringify(simulation));
+        return this.http.post(this.simulationAPI, simulation);
     } 
 
 }
