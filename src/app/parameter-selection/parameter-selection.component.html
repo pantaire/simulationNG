@@ -8,7 +8,7 @@
       </div>
       <div class="col-sm">
         <label for="eventWahrscheinlichkeit">Eventwahrscheinlichkeit:</label> <span> {{ simulationInput.eventWahrscheinlichkeit * 100 | number:'1.0-0' }} %</span>
-        <input required name="eventWahrscheinlichkeit" [(ngModel)]="simulationInput.eventWahrscheinlichkeit" placeholder="0.5" type="range" class="custom-range" min="0" max="1"
+        <input required name="eventWahrscheinlichkeit" [(ngModel)]="simulationInput.eventWahrscheinlichkeit" placeholder="0.5" type="range" class="custom-range" id="padding" min="0" max="1"
           value="eventWahrscheinlichkeit" step="0.01">
       </div>
     </div>
@@ -100,7 +100,7 @@
     <br>
     <div class="text-center">
       <br>
-      <button type="submit">
+      <button type="submit" id="button">
           Simulation starten
         </button>
         <br>
