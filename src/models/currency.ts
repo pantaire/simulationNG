@@ -1,3 +1,3 @@
-export class Währung {
+export class Currency {
     // ergänzen von Backend
 }

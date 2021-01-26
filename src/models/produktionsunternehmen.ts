@@ -1,12 +1,12 @@
-import { Währung } from './währung';
+import { Currency } from './currency';
 
 export class Produktionsunternehmen {
     //region: Region;
-	währung: Währung; // in html als currency wegen Umlaut
+	currency: Currency; // umbenannt von währung wegen Umlaut
     name: string;
 	kapital: number; 
 	kaufInteresse: number;
 	produktionsmenge: number;
 	kosten: number; 
-    lagerkapazität: number; // in html als lagerkap wegen Umlaut
+    lagerkap: number; // umbenannt von lagerkapazität wegen Umlaut
 }

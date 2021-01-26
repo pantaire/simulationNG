@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Simulation } from '../models/simulation';
+import { ExpertSimulation } from 'src/models/expertsimulation';
 
 @Injectable({
   providedIn: 'root'
@@ -14,36 +15,16 @@ export class SimulationService {
     headers = new HttpHeaders().set('content-type', 'application/json');
     simulationAPI:string = 'http://localhost:8080/simulation';
     simulation:Simulation;
+    expertSim:ExpertSimulation;
 
-    
-    //liest Input aus Formular aus, derzeit noch in onSubmit()
-    getSimulation(simulation) {
-        return this.simulation =  {
-            rundenanzahl: this.simulation.rundenanzahl,
-            eventWahrscheinlichkeit: this.simulation.eventWahrscheinlichkeit,
-            lieferantenanzahl: this.simulation.lieferantenanzahl,
-            kundenanzahl: this.simulation.kundenanzahl,
-            produktionsunternehmenanzahl: this.simulation.produktionsunternehmenanzahl,
-            startKapitalKMin: this.simulation.startKapitalKMax,
-            startKapitalKMax: this.simulation.startKapitalKMax,
-            startKapitalPUMin: this.simulation.startKapitalPUMin,
-            startKapitalPUMax: this.simulation.startKapitalPUMax,
-            startKapitalLMin: this.simulation.startKapitalLMin,
-            startKapitalLMax: this.simulation.startKapitalLMax,
-            produktionsmengePUMin: this.simulation.produktionsmengePUMin,
-            produktionsmengePUMax: this.simulation.produktionsmengePUMax,
-            produktionsmengeLMin: this.simulation.produktionsmengeLMin,
-            produktionsmengeLMax: this.simulation.produktionsmengeLMax,
-            lagerLMin: this.simulation.lagerLMin,
-            lagerLMax: this.simulation.lagerLMax,
-            lagerPUMin: this.simulation.lagerPUMin,
-            lagerPUMax: this.simulation.lagerPUMax 
-        }
-    }
 
     // Kommunikation zu Backend, Bereitstellen der Simulationseingabe - Antwort liefert Simulation mit Daten für Statistik zurück
      httpPostSimulation(simulation:Simulation) {
         return this.http.post(this.simulationAPI, simulation);
+    } 
+
+    httpPostExpertSimulation(expertSim:ExpertSimulation) {
+        return this.http.post(this.simulationAPI, expertSim);
     } 
 
 }

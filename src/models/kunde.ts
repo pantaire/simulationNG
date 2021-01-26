@@ -1,7 +1,7 @@
-export class Simulation {
+export class Kunde {
     name: string;
     kapital: number;
-    kaufpräferenz: number; // kaufpref in html wegen umlaut
+    kaufpref: number; // kaufpref in html wegen umlaut
     einkommen: number;
     kauflust: number;
     lebenskosten: number;
