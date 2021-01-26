@@ -41,7 +41,6 @@ export class SimulationService {
         }
     }
 
-
     // Kommunikation zu Backend, Bereitstellen der Simulationseingabe - Antwort liefert Simulation mit Daten für Statistik zurück
      httpPostSimulation(simulation:Simulation) {
         return this.http.post(this.simulationAPI, simulation);

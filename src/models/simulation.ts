@@ -20,4 +20,7 @@ export class Simulation {
     lagerLMax: number;
     lagerPUMin: number;
     lagerPUMax: number;
+    //rundenStatistikKunden: HashMap<Integer, Double>();
+	//rundenStatistikProduktionsunternehmen: HashMap<Integer, Double>();
+	//rundenStatistikLieferanten: HashMap<Integer, Double>();
 }

@@ -38,7 +38,7 @@ export class ParameterSelectionComponent implements OnInit {
         lieferantenanzahl: simulationInput.lieferantenanzahl,
         kundenanzahl: simulationInput.kundenanzahl,
         produktionsunternehmenanzahl: simulationInput.produktionsunternehmenanzahl,
-        startKapitalKMin: simulationInput.startKapitalKMax,
+        startKapitalKMin: simulationInput.startKapitalKMin,
         startKapitalKMax: simulationInput.startKapitalKMax,
         startKapitalPUMin: simulationInput.startKapitalPUMin,
         startKapitalPUMax: simulationInput.startKapitalPUMax,

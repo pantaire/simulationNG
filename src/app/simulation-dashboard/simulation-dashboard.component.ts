@@ -20,9 +20,22 @@ export class SimulationDashboardComponent implements OnInit {
     var produzentenColour = 'rgb(0, 153, 255)';
     var kundenColour = 'rgb(153, 51, 255)';
 
+    var myVar = {
+        "24": {
+          "amount": 2,
+          "minutes": 30
+        },
+        "32": {
+          "amount": 3,
+          "minutes": 30
+        }
+      };
+    const rundenStatistikKunden = {};
+	const rundenStatistikProduktionsunternehmen = {};
+	const rundenStatistikLieferanten = {};
 
-        this.service.httpGetSimulation().subscribe(response => {
-            this.simulation = response;
+        this.service.httpPostSimulation(this.simulation).subscribe(response => {
+            response = this.simulation;
           });
   
     
