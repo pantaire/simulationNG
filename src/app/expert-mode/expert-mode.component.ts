@@ -74,9 +74,6 @@ export class ExpertModeComponent implements OnInit {
     kunden: this.kundenArray,
     produktionsunternehmen: this.produktionsunternehmenArray
     }; 
- 
-
-    // Use when/if simulationService is implemented 
     console.log(this.expertSim);
     this.simulationService.httpPostExpertSimulation(this.expertSim).subscribe(() => {});
     this.router.navigate(['/dashboard']);
