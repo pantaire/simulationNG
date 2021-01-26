@@ -23,13 +23,13 @@
         <!--LIEFERANT-->
         <div>
           <h2>Lieferanten</h2>
-          <div class="form-row" *ngFor="let lieferant of lieferantenArray">
+          <div class="form-row" >
             <table>
               <tr>
                 <td>
                   <label for="name">Name</label>
                   <input required name="lieferant.name" id="input" [(ngModel)]="lieferant.name" placeholder="Lightsped"
-                    type="number" class="form-control">
+                    type="text" class="form-control">
                 </td>
                 <td>
                   <label for="kapital">Kapital</label>
@@ -66,8 +66,8 @@
                 <td>{{ lieferant.kapital }}</td>
                 <td>{{ lieferant.kosten }}</td>
                 <td>{{ lieferant.preis }}</td>
-                <td>{{ lieferant.lagerkap }}</td>
-                <td>{{ lieferant.maxlager }}</td>
+                <td>{{ lieferant.lager }}</td>
+                <td>{{ lieferant.lagerMax }}</td>
               </tr>
             </table>
 
@@ -87,10 +87,10 @@
                     <label for="währung">Währung</label>
                     <select required name="produktionsunternehmen.currency" id="input"
                       [(ngModel)]="produktionsunternehmen.currency" type="dropdown" class="form-control">
-                      <option value="1" selected>EUR</option>
-                      <option value="2" selected>USD</option>
-                      <option value="3" selected>CHF</option>
-                      <option value="4" selected>GBP</option>
+                      <option value="EUR" selected>EUR</option>
+                      <option value="USD" selected>USD</option>
+                      <option value="CHF" selected>CHF</option>
+                      <option value="GBP" selected>GBP</option>
                     </select>
                   </td>
                   <td>
@@ -125,11 +125,11 @@
                     <button id="button" (click)="addProduktionsunternehmen()" type="submit">+</button>
                   </td>
                 </tr>
-                <tr *ngFor="let produktionsunternehmen of prdouktionsunternehmenArray">
+                <tr *ngFor="let produktionsunternehmen of produktionsunternehmenArray">
                   <td>{{ produktionsunternehmen.name }}</td>
                   <td>{{ produktionsunternehmen.currency }}</td>
                   <td>{{ produktionsunternehmen.kapital }}</td>
-                  <td>{{ produktionsunternehmen.kaufinteresse }}</td>
+                  <td>{{ produktionsunternehmen.kaufInteresse }}</td>
                   <td>{{ produktionsunternehmen.produktionsmenge }}</td>
                   <td>{{ produktionsunternehmen.kosten }}</td>
                   <td>{{ produktionsunternehmen.lagerkap }}</td>
