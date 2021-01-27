@@ -1,4 +1,4 @@
-<div>
+<div style="padding-top: 1%;">
   <div class="container">
     <h1>Expertenmodus</h1>
     <div>
@@ -19,12 +19,13 @@
             </div>
           </div>
         </div>
-
+        <hr _ngcontent-gvo-c49="">
         <!--LIEFERANT-->
         <div>
           <h2>Lieferanten</h2>
-          <div class="form-row" >
+          <div class="form-row" style="align-items: center;text-align: center;" >
             <table>
+              <div>
               <tr>
                 <td>
                   <label for="name">Name</label>
@@ -58,9 +59,12 @@
                     placeholder="1000" type="number" class="form-control">
                 </td>
                 <td>
+                  <label for="lagerMax">Hinzufügen</label>
                   <button id="button" (click)="addLieferant()" type="submit">+</button>
                 </td>
+                
               </tr>
+            </div>
               <tr *ngFor="let lieferant of lieferantenArray">
                 <td>{{ lieferant.name }}</td>
                 <td>{{ lieferant.kapital }}</td>
@@ -73,9 +77,10 @@
 
 
             <!--PRODUKTIONSUNTERNEHMEN-->
-            <div>
+            <div style="padding-top: 2%">
               <h2>Produktionsunternehmen</h2>
               <table>
+                <div>
                 <tr>
                   <td>
                     <label for="name">Name</label>
@@ -122,9 +127,11 @@
                       placeholder="1000" type="number" class="form-control">
                   </td>
                   <td>
+                    <label for="lagerMax">Hinzufügen</label>
                     <button id="button" (click)="addProduktionsunternehmen()" type="submit">+</button>
                   </td>
                 </tr>
+                </div>
                 <tr *ngFor="let produktionsunternehmen of produktionsunternehmenArray">
                   <td>{{ produktionsunternehmen.name }}</td>
                   <td>{{ produktionsunternehmen.currency }}</td>
@@ -138,9 +145,10 @@
             </div>
 
             <!--KUNDE-->
-            <div>
+            <div style="padding-top: 2%">
               <h2>Kunden</h2>
-              <table style="width=100%">
+              <table style="width: 100%">
+                <div>
                 <tr>
                   <td>
                     <label for="name">Name</label>
@@ -176,9 +184,11 @@
                     </select>
                   </td>
                   <td>
+                    <label for="lagerMax">Hinzufügen</label>
                     <button id="button" (click)="addKunde()" type="submit">+</button>
                   </td>
                 </tr>
+                </div>
                 <tr *ngFor="let kunde of kundenArray">
                   <td>{{ kunde.name }}</td>
                   <td>{{ kunde.kapital }}</td>
@@ -188,7 +198,8 @@
                   <td>{{ kunde.kaufpref }}</td>
                 </tr>
               </table>
+            
+            <div class="text-center" style="padding-top: 2%;padding-bottom: 2%;">
+              <button id="button" type="submit" >Simulation starten</button>
             </div>
-            <div class="text-center">
-              <button id="button" type="submit">Simulation starten</button>
-            </div>
+          </div>

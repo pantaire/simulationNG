@@ -8,16 +8,12 @@ html {
   font-weight: 800 !important;
 }
 
-.container {
-  margin-bottom: 12% !important;
-}
-
 body {
+  padding-top: 3%;
   margin: auto;
   position: relative !important;
-  background: -webkit-gradient(linear, left top, left bottom, from(#33323a), to(#1e1e1e)) !important;
-  background: linear-gradient(to bottom, #33323a, #1e1e1e) !important;
-  background-color: #313036 !important;
+  background: -webkit-gradient(linear, right top, left top, from(#33323a), to(#1e1e1e)) !important;
+  background: linear-gradient(to left, #33323a, #1e1e1e) !important;
   font-family: "Benton Sans", Benton Sans !important;
   margin: 1 !important;
   overflow-x: hidden !important;
