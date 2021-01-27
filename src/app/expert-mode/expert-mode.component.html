@@ -1,205 +1,157 @@
 <div style="padding-top: 1%;">
-  <div class="container">
-    <h1>Expertenmodus</h1>
-    <div>
-      <!--muss für jede Simulation festgelegt werden-->
-      <form #simulationInput="ngForm" (ngSubmit)="onSubmitExpert(rundenanzahl, eventWahrscheinlichkeit)">
-        <div class="">
-          <div class="row">
-            <div class="col-sm">
-              <label for="rundenanzahl">Anzahl Runden:</label>
-              <input required name="rundenanzahl" id="input" [(ngModel)]="rundenanzahl" placeholder="1000" type="number"
+<div class="container">
+<h1>Expertenmodus</h1>
+<div>
+<!--muss für jede Simulation festgelegt werden-->
+<form #simulationInput="ngForm" (ngSubmit)="onSubmitExpert(rundenanzahl, eventWahrscheinlichkeit)">
+<div class="">
+  <div class="row">
+    <div class="col-sm">
+      <label for="rundenanzahl">Anzahl Runden:</label>
+      <input required name="rundenanzahl" id="input" [(ngModel)]="rundenanzahl" placeholder="1000" type="number"
                 class="form-control">
-            </div>
-            <div class="col-sm">
-              <label for="eventWahrscheinlichkeit">Eventwahrscheinlichkeit:</label> <span>
-                {{ eventWahrscheinlichkeit * 100 | number:'1.0-0' }} %</span>
-              <input required name="eventWahrscheinlichkeit" [(ngModel)]="eventWahrscheinlichkeit" placeholder="0.5"
+    </div>
+    <div class="col-sm">
+      <label for="eventWahrscheinlichkeit">Eventwahrscheinlichkeit:</label>
+      <span> {{ eventWahrscheinlichkeit * 100 | number:'1.0-0' }} %</span>
+      <input required name="eventWahrscheinlichkeit" [(ngModel)]="eventWahrscheinlichkeit" placeholder="0.5"
                 type="range" class="custom-range" min="0" max="1" value="eventWahrscheinlichkeit" step="0.01">
-            </div>
-          </div>
-        </div>
-        <hr _ngcontent-gvo-c49="">
-        <!--LIEFERANT-->
-        <div>
-          <h2>Lieferanten</h2>
-          <div class="form-row" style="align-items: center;text-align: center;" >
-            <table>
-              <div>
-              <tr>
-                <td>
-                  <label for="name">Name</label>
-                  <input required name="lieferant.name" id="input" [(ngModel)]="lieferant.name" placeholder="Lightsped"
-                    type="text" class="form-control">
-                </td>
-                <td>
-                  <label for="kapital">Kapital</label>
-                  <input required name="lieferant.kapital" id="input" [(ngModel)]="lieferant.kapital" placeholder="1000"
-                    type="number" class="form-control">
-                </td>
-                <td>
-                  <label for="kosten">Kosten</label>
-                  <input required name="lieferant.kosten" id="input" [(ngModel)]="lieferant.kosten" placeholder="1000"
-                    type="number" class="form-control">
-                </td>
-                <td>
-                  <label for="preis">Preis</label>
-                  <input required name="lieferant.preis" id="input" [(ngModel)]="lieferant.preis" placeholder="1000"
-                    type="number" class="form-control">
-                </td>
-                <td>
-                  <label for="lager">Lagerkapazität</label>
-                  <input required name="lieferant.lager" id="input" [(ngModel)]="lieferant.lager" placeholder="1000"
-                    type="number" class="form-control">
-                </td>
+    </div>
+  </div>
+</div>
+<hr _ngcontent-gvo-c49="">
+<!--LIEFERANT-->
+<div>
+<h2>Lieferanten</h2>
+<div class="form-row" style="align-items: center;text-align: center;" >
+<table>
+  <div>
+    <tr>
+      <td><label for="name">Name</label>
+        <input required name="lieferant.name" id="input" [(ngModel)]="lieferant.name" placeholder="Lightsped"
+                    type="text" class="form-control"></td>
+      <td><label for="kapital">Kapital</label>
+        <input required name="lieferant.kapital" id="input" [(ngModel)]="lieferant.kapital" placeholder="1000"
+                    type="number" class="form-control"></td>
+      <td><label for="kosten">Kosten</label>
+        <input required name="lieferant.kosten" id="input" [(ngModel)]="lieferant.kosten" placeholder="1000"
+                    type="number" class="form-control"></td>
+      <td><label for="preis">Preis</label>
+        <input required name="lieferant.preis" id="input" [(ngModel)]="lieferant.preis" placeholder="1000"
+                    type="number" class="form-control"></td>
+      <td><label for="lager">Lagerkapazität</label>
+        <input required name="lieferant.lager" id="input" [(ngModel)]="lieferant.lager" placeholder="1000"
+                    type="number" class="form-control"></td>
+      <td><label for="lagerMax">max. Lagerkap.</label>
+        <input required name="lieferant.lagerMax" id="input" [(ngModel)]="lieferant.lagerMax"
+                    placeholder="1000" type="number" class="form-control"></td>
+      <td><label for="lagerMax">Hinzufügen</label>
+        <button id="button" (click)="addLieferant()" type="submit">+</button></td>
+    </tr>
+  </div>
+  <tr *ngFor="let lieferant of lieferantenArray">
+    <td>{{ lieferant.name }}</td>
+    <td>{{ lieferant.kapital }}</td>
+    <td>{{ lieferant.kosten }}</td>
+    <td>{{ lieferant.preis }}</td>
+    <td>{{ lieferant.lager }}</td>
+    <td>{{ lieferant.lagerMax }}</td>
+  </tr>
+</table>
 
-                <td>
-                  <label for="lagerMax">max. Lagerkap.</label>
-                  <input required name="lieferant.lagerMax" id="input" [(ngModel)]="lieferant.lagerMax"
-                    placeholder="1000" type="number" class="form-control">
-                </td>
-                <td>
-                  <label for="lagerMax">Hinzufügen</label>
-                  <button id="button" (click)="addLieferant()" type="submit">+</button>
-                </td>
-                
-              </tr>
-            </div>
-              <tr *ngFor="let lieferant of lieferantenArray">
-                <td>{{ lieferant.name }}</td>
-                <td>{{ lieferant.kapital }}</td>
-                <td>{{ lieferant.kosten }}</td>
-                <td>{{ lieferant.preis }}</td>
-                <td>{{ lieferant.lager }}</td>
-                <td>{{ lieferant.lagerMax }}</td>
-              </tr>
-            </table>
-
-
-            <!--PRODUKTIONSUNTERNEHMEN-->
-            <div style="padding-top: 2%">
-              <h2>Produktionsunternehmen</h2>
-              <table>
-                <div>
-                <tr>
-                  <td>
-                    <label for="name">Name</label>
-                    <input required name="produktionsunternehmen.name" id="input"
+<!--PRODUKTIONSUNTERNEHMEN-->
+<div style="padding-top: 2%">
+  <h2>Produktionsunternehmen</h2>
+  <table>
+    <div>
+      <tr>
+        <td><label for="name">Name</label>
+          <input required name="produktionsunternehmen.name" id="input"
                       [(ngModel)]="produktionsunternehmen.name" placeholder="Tante Emma" type="text"
-                      class="form-control">
-                  </td>
-                  <td>
-                    <label for="währung">Währung</label>
-                    <select required name="produktionsunternehmen.currency" id="input"
+                      class="form-control"></td>
+        <td><label for="währung">Währung</label>
+          <select required name="produktionsunternehmen.currency" id="input"
                       [(ngModel)]="produktionsunternehmen.currency" type="dropdown" class="form-control">
-                      <option value="EUR" selected>EUR</option>
-                      <option value="USD" selected>USD</option>
-                      <option value="CHF" selected>CHF</option>
-                      <option value="GBP" selected>GBP</option>
-                    </select>
-                  </td>
-                  <td>
-                    <label for="kapital">Kapital</label>
-                    <input required name="produktionsunternehmen.kapital" id="input"
+            <option value="EUR" selected>EUR</option>
+            <option value="USD" selected>USD</option>
+            <option value="CHF" selected>CHF</option>
+            <option value="GBP" selected>GBP</option>
+          </select></td>
+        <td><label for="kapital">Kapital</label>
+          <input required name="produktionsunternehmen.kapital" id="input"
                       [(ngModel)]="produktionsunternehmen.kapital" placeholder="1000" type="number"
-                      class="form-control">
-                  </td>
-                  <td>
-                    <label for="kaufinteresse">Kaufinteresse</label>
-                    <input required name="produktionsunternehmen.kaufInteresse" id="input"
+                      class="form-control"></td>
+        <td><label for="kaufinteresse">Kaufinteresse</label>
+          <input required name="produktionsunternehmen.kaufInteresse" id="input"
                       [(ngModel)]="produktionsunternehmen.kaufInteresse" placeholder="1000" type="number"
-                      class="form-control">
-                  </td>
-                  <td>
-                    <label for="produktionsmenge">Produktionsmenge</label>
-                    <input required name="produktionsunternehmen.produktionsmenge" id="input"
+                      class="form-control"></td>
+        <td><label for="produktionsmenge">Produktionsmenge</label>
+          <input required name="produktionsunternehmen.produktionsmenge" id="input"
                       [(ngModel)]="produktionsunternehmen.produktionsmenge" placeholder="1000" type="number"
-                      class="form-control">
-                  </td>
-                  <td>
-                    <label for="kosten">Kosten</label>
-                    <input required name="produktionsunternehmen.kosten" id="input"
-                      [(ngModel)]="produktionsunternehmen.kosten" placeholder="1000" type="number" class="form-control">
-                  </td>
-                  <td>
-                    <label for="lagerkapazität">Lagerkapazität</label>
-                    <input required name="kunde.lagerkap" id="input" [(ngModel)]="produktionsunternehmen.lagerkap"
-                      placeholder="1000" type="number" class="form-control">
-                  </td>
-                  <td>
-                    <label for="lagerMax">Hinzufügen</label>
-                    <button id="button" (click)="addProduktionsunternehmen()" type="submit">+</button>
-                  </td>
-                </tr>
-                </div>
-                <tr *ngFor="let produktionsunternehmen of produktionsunternehmenArray">
-                  <td>{{ produktionsunternehmen.name }}</td>
-                  <td>{{ produktionsunternehmen.currency }}</td>
-                  <td>{{ produktionsunternehmen.kapital }}</td>
-                  <td>{{ produktionsunternehmen.kaufInteresse }}</td>
-                  <td>{{ produktionsunternehmen.produktionsmenge }}</td>
-                  <td>{{ produktionsunternehmen.kosten }}</td>
-                  <td>{{ produktionsunternehmen.lagerkap }}</td>
-                </tr>
-              </table>
-            </div>
+                      class="form-control"></td>
+        <td><label for="kosten">Kosten</label>
+          <input required name="produktionsunternehmen.kosten" id="input"
+                      [(ngModel)]="produktionsunternehmen.kosten" placeholder="1000" type="number" class="form-control"></td>
+        <td><label for="lagerkapazität">Lagerkapazität</label>
+          <input required name="kunde.lagerkap" id="input" [(ngModel)]="produktionsunternehmen.lagerkap"
+                      placeholder="1000" type="number" class="form-control"></td>
+        <td><label for="lagerMax">Hinzufügen</label>
+          <button id="button" (click)="addProduktionsunternehmen()" type="submit">+</button></td>
+      </tr>
+    </div>
+    <tr *ngFor="let produktionsunternehmen of produktionsunternehmenArray">
+      <td>{{ produktionsunternehmen.name }}</td>
+      <td>{{ produktionsunternehmen.currency }}</td>
+      <td>{{ produktionsunternehmen.kapital }}</td>
+      <td>{{ produktionsunternehmen.kaufInteresse }}</td>
+      <td>{{ produktionsunternehmen.produktionsmenge }}</td>
+      <td>{{ produktionsunternehmen.kosten }}</td>
+      <td>{{ produktionsunternehmen.lagerkap }}</td>
+    </tr>
+  </table>
+</div>
 
-            <!--KUNDE-->
-            <div style="padding-top: 2%">
-              <h2>Kunden</h2>
-              <table style="width: 100%">
-                <div>
-                <tr>
-                  <td>
-                    <label for="name">Name</label>
-                    <input required name="kunde.name" id="input" [(ngModel)]="kunde.name" placeholder="Rainer Zufall"
-                      type="text" class="form-control">
-                  </td>
-                  <td>
-                    <label for="kapital">Kapital</label>
-                    <input required name="kunde.kapital" id="input" [(ngModel)]="kunde.kapital" placeholder="1000"
-                      type="number" class="form-control">
-                  </td>
-                  <td>
-                    <label for="einkommen">Einkommen</label>
-                    <input required name="kunde.einkommen" id="input" [(ngModel)]="kunde.einkommen" placeholder="1000"
-                      type="number" class="form-control">
-                  </td>
-                  <td>
-                    <label for="lebenskosten">Lebenskosten</label>
-                    <input required name="kunde.lebenskosten" id="input" [(ngModel)]="kunde.lebenskosten"
-                      placeholder="1000" type="number" class="form-control">
-                  </td>
-                  <td>
-                    <label for="kauflust">Kauflust</label>
-                    <input required name="kunde.kauflust" id="input" [(ngModel)]="kunde.kauflust" placeholder="1000"
-                      type="number" class="form-control">
-                  </td>
-                  <td>
-                    <label for="kaufpräferenz">Kaufpräferenz</label>
-                    <select required name="kunde.kaufpref" id="input" [(ngModel)]="kunde.kaufpref" type="dropdown"
+<!--KUNDE-->
+<div style="padding-top: 2%">
+  <h2>Kunden</h2>
+  <table style="width: 100%">
+    <div>
+      <tr>
+        <td><label for="name">Name</label>
+          <input required name="kunde.name" id="input" [(ngModel)]="kunde.name" placeholder="Rainer Zufall"
+                      type="text" class="form-control"></td>
+        <td><label for="kapital">Kapital</label>
+          <input required name="kunde.kapital" id="input" [(ngModel)]="kunde.kapital" placeholder="1000"
+                      type="number" class="form-control"></td>
+        <td><label for="einkommen">Einkommen</label>
+          <input required name="kunde.einkommen" id="input" [(ngModel)]="kunde.einkommen" placeholder="1000"
+                      type="number" class="form-control"></td>
+        <td><label for="lebenskosten">Lebenskosten</label>
+          <input required name="kunde.lebenskosten" id="input" [(ngModel)]="kunde.lebenskosten"
+                      placeholder="1000" type="number" class="form-control"></td>
+        <td><label for="kauflust">Kauflust</label>
+          <input required name="kunde.kauflust" id="input" [(ngModel)]="kunde.kauflust" placeholder="1000"
+                      type="number" class="form-control"></td>
+        <td><label for="kaufpräferenz">Kaufpräferenz</label>
+          <select required name="kunde.kaufpref" id="input" [(ngModel)]="kunde.kaufpref" type="dropdown"
                       class="form-control">
-                      <option value="Chips" selected>Chips</option>
-                      <option value="Schokolade">Schokolade</option>
-                    </select>
-                  </td>
-                  <td>
-                    <label for="lagerMax">Hinzufügen</label>
-                    <button id="button" (click)="addKunde()" type="submit">+</button>
-                  </td>
-                </tr>
-                </div>
-                <tr *ngFor="let kunde of kundenArray">
-                  <td>{{ kunde.name }}</td>
-                  <td>{{ kunde.kapital }}</td>
-                  <td>{{ kunde.einkommen }}</td>
-                  <td>{{ kunde.lebenskosten }}</td>
-                  <td>{{ kunde.kauflust }}</td>
-                  <td>{{ kunde.kaufpref }}</td>
-                </tr>
-              </table>
-            
-            <div class="text-center" style="padding-top: 2%;padding-bottom: 2%;">
-              <button id="button" type="submit" >Simulation starten</button>
-            </div>
-          </div>
+            <option value="Chips" selected>Chips</option>
+            <option value="Schokolade">Schokolade</option>
+          </select></td>
+        <td><label for="lagerMax">Hinzufügen</label>
+          <button id="button" (click)="addKunde()" type="submit">+</button></td>
+      </tr>
+    </div>
+    <tr *ngFor="let kunde of kundenArray">
+      <td>{{ kunde.name }}</td>
+      <td>{{ kunde.kapital }}</td>
+      <td>{{ kunde.einkommen }}</td>
+      <td>{{ kunde.lebenskosten }}</td>
+      <td>{{ kunde.kauflust }}</td>
+      <td>{{ kunde.kaufpref }}</td>
+    </tr>
+  </table>
+  <div class="text-center" style="padding-top: 2%;padding-bottom: 2%;">
+    <button id="button" type="submit" >Simulation starten</button>
+  </div>
+</div>
