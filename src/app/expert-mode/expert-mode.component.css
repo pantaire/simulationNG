@@ -1,0 +1,6 @@
+td {
+    text-align: center;
+}
+td > label {
+    text-align: center;
+}
