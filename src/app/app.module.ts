@@ -12,6 +12,7 @@ import { ParameterSelectionComponent } from './parameter-selection/parameter-sel
 import { SimulationDashboardComponent } from './simulation-dashboard/simulation-dashboard.component';
 import { AppRoutingModule } from './app-routing.module';
 import { WeatherComponent } from './weather/weather.component';
+import { ExplanationPopoverComponent } from './explanation-popover/explanation-popover.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { WeatherComponent } from './weather/weather.component';
     HeaderComponent,
     ParameterSelectionComponent,
     SimulationDashboardComponent,
-    WeatherComponent
+    WeatherComponent,
+    ExplanationPopoverComponent
   ],  
   imports: [
     HttpClientModule,  
