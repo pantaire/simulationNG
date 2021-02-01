@@ -11,7 +11,6 @@ import { HeaderComponent } from './header/header.component';
 import { ParameterSelectionComponent } from './parameter-selection/parameter-selection.component';
 import { SimulationDashboardComponent } from './simulation-dashboard/simulation-dashboard.component';
 import { AppRoutingModule } from './app-routing.module';
-import { WeatherComponent } from './weather/weather.component';
 import { ExplanationPopoverComponent } from './explanation-popover/explanation-popover.component';
 
 @NgModule({
@@ -22,7 +21,6 @@ import { ExplanationPopoverComponent } from './explanation-popover/explanation-p
     HeaderComponent,
     ParameterSelectionComponent,
     SimulationDashboardComponent,
-    WeatherComponent,
     ExplanationPopoverComponent
   ],  
   imports: [

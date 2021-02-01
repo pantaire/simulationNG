@@ -1,7 +1,6 @@
-import { Component, OnInit, Input, Output } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { EventEmitter } from 'events';
 import { SimulationService } from '../simulation.service';
 import { Simulation } from '../../models/simulation';
 
@@ -11,7 +10,7 @@ import { Simulation } from '../../models/simulation';
   styleUrls: ['./parameter-selection.component.css']
 })
 
-export class ParameterSelectionComponent implements OnInit {
+export class ParameterSelectionComponent {
 
   @Input() simulationInput:Simulation;
 
@@ -21,7 +20,6 @@ export class ParameterSelectionComponent implements OnInit {
   constructor(private http: HttpClient, private router:Router, private simulationService:SimulationService) { 
   }
 
-  ngOnInit() {}
   validateInput(simulationInput):boolean {
       return true;
   }
@@ -50,8 +48,11 @@ export class ParameterSelectionComponent implements OnInit {
             lagerPUMax: simulationInput.lagerPUMax  
         }; 
     
-    this.simulationService.httpPostSimulation(this.simulation);
+    //Input validation
     if (this.validateInput(simulationInput)) {
+        //POST Request, passes Input to simulation.service
+        this.simulationService.httpPostSimulation(this.simulation);
+        //navigates to dashboard view
         this.router.navigate(['/dashboard']);
     }
   }

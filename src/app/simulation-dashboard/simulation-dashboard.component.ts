@@ -20,7 +20,6 @@ export class SimulationDashboardComponent implements OnInit {
     var produzentenColour = 'rgb(0, 153, 255)';
     var kundenColour = 'rgb(153, 51, 255)';
 
-    const rundenStatistikKunden = [];
 	const rundenStatistikProduktionsunternehmen = [];
 	const rundenStatistikLieferanten = [];
     
