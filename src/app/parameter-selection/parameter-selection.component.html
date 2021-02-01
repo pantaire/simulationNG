@@ -3,14 +3,13 @@
     <div class="row">
       <div class="col-sm">
         <label for="rundenanzahl">Anzahl Runden:</label>
-        <app-explanation-popover popoverText="asef"></app-explanation-popover> 
+        <app-explanation-popover popoverText="Anzahl der Runden, die die Simulation durchlaufen soll"></app-explanation-popover> 
         <input required name="rundenanzahl" id="input" [(ngModel)]="simulationInput.rundenanzahl" placeholder="1000" type="number" class="form-control">
       </div>
       <div class="col-sm">
         <label for="eventWahrscheinlichkeit">Eventwahrscheinlichkeit:</label>
-
         <span> {{ simulationInput.eventWahrscheinlichkeit * 100 | number:'1.0-0' }} %</span>
-        <app-explanation-popover popoverText="asef"></app-explanation-popover> 
+        <app-explanation-popover popoverText="Während jeder Runde können Events auftreten, die Konsequenzen für die weitere Simulation haben. Die Wahrscheinlichkeit kann von 'keine Events' bis '1 garantiertes Event' pro Runde gehen"></app-explanation-popover> 
         <input required name="eventWahrscheinlichkeit" [(ngModel)]="simulationInput.eventWahrscheinlichkeit" placeholder="0.5" type="range" class="custom-range" id="padding" min="0" max="1"
           value="eventWahrscheinlichkeit" step="0.01">
       </div>
@@ -25,17 +24,17 @@
     <div class="row">
       <div class="col-sm">
         <label for="produktionsunternehmenanzahl">Anzahl Produzenten:</label>
-        <app-explanation-popover popoverText="asef"></app-explanation-popover> 
+        <app-explanation-popover popoverText="Wie viele Produktionsunternehmen sollen in dieser Simulation generiert werden?"></app-explanation-popover> 
         <input required name="produktionsunternehmenanzahl" id="input" [(ngModel)]="simulationInput.produktionsunternehmenanzahl" placeholder="50" type="number" class="form-control">
       </div>
       <div class="col-sm">
         <label for="lieferantenanzahl">Anzahl Lieferanten:</label>
-        <app-explanation-popover popoverText="asef"></app-explanation-popover> 
+        <app-explanation-popover popoverText="Wie viele Lieferanten sollen in dieser Simulation generiert werden?"></app-explanation-popover> 
         <input required name="lieferantenanzahl" id="input" [(ngModel)]="simulationInput.lieferantenanzahl" placeholder="80" type="number" class="form-control">
       </div>
       <div class="col-sm">
         <label for="kundenanzahl">Anzahl Kunden:</label>
-        <app-explanation-popover popoverText="asef"></app-explanation-popover> 
+        <app-explanation-popover popoverText="Wie viele Kunden sollen in dieser Simulation generiert werden?"></app-explanation-popover> 
         <input required name="kundenanzahl" id="input"  [(ngModel)]="simulationInput.kundenanzahl" placeholder="300" type="number" class="form-control">
       </div>
     </div>
@@ -43,7 +42,7 @@
     <div class="row">
       <div class="col-sm">
         <label for="startKapitalPUMin">Kapital Produzenten:</label>
-        <app-explanation-popover popoverText="asef"></app-explanation-popover> 
+        <app-explanation-popover popoverText="Jedem der {{ simulationInput.produktionsunternehmenanzahl }} Produzenten wird ein zufällig generiertes Startkapital in diesem Bereich zugeordnet"></app-explanation-popover> 
         <div style="display: inline-flex;">
           <input style="width: 50%" id="input" required name="startKapitalPUMin" [(ngModel)]="simulationInput.startKapitalPUMin" placeholder="Min" type="number" class="form-control small">
           <input style="width: 50%" id="input" required name="startKapitalPUMax" [(ngModel)]="simulationInput.startKapitalPUMax" placeholder="Max" type="number" class="form-control">
@@ -51,7 +50,7 @@
       </div>
       <div class="col-sm">
         <label for="startKapitalLMin">Kapital Lieferanten:</label>
-        <app-explanation-popover popoverText="asef"></app-explanation-popover> 
+        <app-explanation-popover popoverText="Jedem der {{ simulationInput.lieferantenanzahl }} Lieferanten wird ein zufällig generiertes Startkapital in diesem Bereich zugeordnet"></app-explanation-popover> 
         <div style="display: inline-flex;">
           <input style="width: 50%" id="input" required name="startKapitalLMin" [(ngModel)]="simulationInput.startKapitalLMin" placeholder="Min" type="number" class="form-control">
           <input style="width: 50%" id="input" required name="startKapitalKMax" [(ngModel)]="simulationInput.startKapitalLMax" placeholder="Max" type="number" class="form-control">
@@ -59,7 +58,7 @@
       </div>
       <div class="col-sm">
         <label for="startKapitalKMin">Kapital Kunden:</label>
-        <app-explanation-popover popoverText="asef"></app-explanation-popover> 
+        <app-explanation-popover popoverText="Jedem der {{ simulationInput.kundenanzahl }} möglichen Kunden wird ein zufällig generiertes Startkapital in diesem Bereich zugeordnet, das während der Simulation zur Verfügung steht"></app-explanation-popover> 
         <div style="display: inline-flex;">
           <input style="width: 50%" id="input" required name="startKapitalKMin" [(ngModel)]="simulationInput.startKapitalKMin" placeholder="Min" type="number" class="form-control">
           <input style="width: 50%" id="input" required name="startKapitalLMax" [(ngModel)]="simulationInput.startKapitalKMax" placeholder="Max" type="number" class="form-control">
@@ -70,7 +69,7 @@
     <div class="row">
       <div class="col-sm">
         <label for="startKapitalPUMin">Produktionsmenge Produzenten:</label>
-        <app-explanation-popover popoverText="asef"></app-explanation-popover> 
+        <app-explanation-popover popoverText="Jedem der {{ simulationInput.produktionsunternehmenanzahl }} Produktionsunternehmen wird eine Produktionsmenge in diesem Bereich zugetraut"></app-explanation-popover> 
         <div style="display: inline-flex">
           <input style="width: 50%" id="input" required name="startKapitalPUMin" [(ngModel)]="simulationInput.produktionsmengePUMin" placeholder="Min" type="number" class="form-control">
           <input style="width: 50%" id="input" required name="startKapitalPUMax" [(ngModel)]="simulationInput.produktionsmengePUMax" placeholder="Max" type="number" class="form-control">
@@ -78,7 +77,7 @@
       </div>
       <div class="col-sm">
         <label for="startKapitalLMin">Produktionsmenge Lieferanten:</label>
-        <app-explanation-popover popoverText="asef"></app-explanation-popover> 
+        <app-explanation-popover popoverText="Jedem der {{ simulationInput.lieferantenanzahl }} Lieferanten wird eine Liefermenge in diesem Bereich zugetraut"></app-explanation-popover> 
         <div style="display: inline-flex;">
           <input style="width: 50%" id="input" required name="startKapitalLMin" [(ngModel)]="simulationInput.produktionsmengeLMin" placeholder="Min" type="number" class="form-control">
           <input style="width: 50%" id="input" required name="startKapitalLMax" [(ngModel)]="simulationInput.produktionsmengeLMax" placeholder="Max" type="number" class="form-control">
@@ -92,7 +91,7 @@
     <div class="row">
       <div class="col-sm">
         <label for="lagerPUMin">Lagerkapazität Produzenten:</label>
-        <app-explanation-popover popoverText="asef"></app-explanation-popover> 
+        <app-explanation-popover popoverText="Für jedes Produktionsunternehmen wird ein Lager in zufälliger Größe aus diesem Bereich generiert"></app-explanation-popover> 
         <div style="display: inline-flex;">
           <input style="width: 50%;" id="input" required name="lagerPUMin" [(ngModel)]="simulationInput.lagerPUMin" placeholder="Min" type="number" class="form-control">
           <input style="width: 50%;" id="input" required name="lagerPUMax" [(ngModel)]="simulationInput.lagerPUMax" placeholder="Max" type="number" class="form-control">
@@ -100,7 +99,7 @@
       </div>
       <div class="col-sm">
         <label for="lagerLMin">Lagerkapazität Lieferanten:</label> 
-            <app-explanation-popover popoverText="asef"></app-explanation-popover> 
+            <app-explanation-popover popoverText="Für jedes Produktionsunternehmen wird ein Lager in zufälliger Größe aus diesem Bereich generiert"></app-explanation-popover> 
         <div style="display: inline-flex;">
           <input style="width: 50%;" id="input" required name="lagerLMin" [(ngModel)]="simulationInput.lagerLMin" placeholder="Min" type="number" class="form-control">
           <input style="width: 50%;" id="input" required name="lagerLMax" [(ngModel)]="simulationInput.lagerLMax" placeholder="Max" type="number" class="form-control">
