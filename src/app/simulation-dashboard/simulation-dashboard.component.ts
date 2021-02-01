@@ -16,6 +16,8 @@ export class SimulationDashboardComponent implements OnInit {
     @Input() simulation: Simulation;
     ngOnInit(): void {
 
+        console.log(this.service.kundenStatistik);
+
     var lieferantenColour = 'rgb(77, 225, 255)';
     var produzentenColour = 'rgb(0, 153, 255)';
     var kundenColour = 'rgb(153, 51, 255)';
@@ -23,8 +25,6 @@ export class SimulationDashboardComponent implements OnInit {
 	const rundenStatistikProduktionsunternehmen = [];
 	const rundenStatistikLieferanten = [];
     
-   
-
     var options = {
         responsive: true,
         title: {

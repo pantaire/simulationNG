@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
 import { SimulationService } from '../simulation.service';
 import { Simulation } from '../../models/simulation';
 
@@ -17,7 +16,7 @@ export class ParameterSelectionComponent {
   simulation:Simulation;
   
   //constructor(simulationService:SimulationService, router:Router) {
-  constructor(private http: HttpClient, private router:Router, private simulationService:SimulationService) { 
+  constructor(private http: HttpClient, private simulationService:SimulationService) { 
   }
 
   validateInput(simulationInput):boolean {
@@ -51,9 +50,7 @@ export class ParameterSelectionComponent {
     //Input validation
     if (this.validateInput(simulationInput)) {
         //POST Request, passes Input to simulation.service
-        this.simulationService.httpPostSimulation(this.simulation);
-        //navigates to dashboard view
-        this.router.navigate(['/dashboard']);
+        this.simulationService.httpPostSimulation(this.simulation);    
     }
   }
 }
