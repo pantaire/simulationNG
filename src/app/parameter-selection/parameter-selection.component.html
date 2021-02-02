@@ -2,9 +2,9 @@
     <form #simulationInput="ngForm" (ngSubmit)="onSubmit(simulationInput.value)" style="padding-bottom: 2%">
     <div class="row">
       <div class="col-sm">
-        <label for="rundenanzahl">Anzahl Runden:</label>
-        <app-explanation-popover popoverText="Anzahl der Runden, die die Simulation durchlaufen soll"></app-explanation-popover> 
-        <input required name="rundenanzahl" id="input" [(ngModel)]="simulationInput.rundenanzahl" placeholder="1000" type="number" class="form-control">
+        <div><label for="rundenanzahl">Anzahl Runden:</label>
+        <app-explanation-popover popoverText="Anzahl der Runden, die die Simulation durchlaufen soll"></app-explanation-popover> </div>
+        <input required name="rundenanzahl" id="input"  [(ngModel)]="simulationInput.rundenanzahl" placeholder="1000" type="number" class="form-control">
       </div>
       <div class="col-sm">
         <label for="eventWahrscheinlichkeit">Eventwahrscheinlichkeit:</label>
