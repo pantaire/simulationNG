@@ -1,21 +1,31 @@
-# Simulation
+# Simulytics
 
-this app is part of a student project taking place from Nov 2020 to Feb 2021. 
-If you are looking for a user guide, use the UI hints after starting this app or read the documentation provided to the grading committee. This repository will not provide any further documentation.
+## Angular installieren  
 
-## Starting this app
+Angular kann über den Node Package Manager installiert werden. Hierfür benötigen Sie die passende und aktuelle Version von [NodeJS](https://nodejs.org/en/download/).  
+Führen Sie die Installation anhand des angezeigten Wizards aus.  
+Öffnet Sie eine Kommandozeile und führen Sie folgenden Befehl aus, um Angular zu installieren: 
+`npm install -g @angular/cli`  
+Um die erfolgreiche Installation zu testen, führen Sie den Befehl `ng version` aus, um sich die Versionnummer der installierten Angularversion anzeigen zu lassen. 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Angular starten  
 
-To use this app, you will also need to install the appropriate backend, which is currently not open source. Doing so will allow this project to send and receive data to and from `http://localhost:8080/simulation`. 
+Öffnen Sie eine Kommandozeile und navigieren Sie zu dem Pfad, an dem die (entpackten) Dateien dieses Projekts gespeichert sind. 
+Führen Sie anschließend den Befehl `ng serve -o` aus, um einen Entwicklungsserver von Angular zu starten und ein Browserfenster zu öffnen.  
+Angular öffnet sich nun auf `http://localhost:4200`. 
 
-## Further help
+## Kommunikation mit dem Backend
 
-### ...regarding Angular:
+Um Daten mit dem entsprechenden Backend austauschen zu können, installieren Sie dies gemäß der entsprechenden Anweisungen in der separaten README.md.  
+Haben Sie dies erfolgreich eingerichtet, können Sie über die Oberfläche mit dem Backend kommunizieren.
+
+## Weitere Hilfe
+
+### ...für Angular:
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
-### ...regarding this project:
+### ...zu diesem Projekt:
 
 Feel free to reach out to any maintainers via github for further documentation, explanation or helpful tips.
 
