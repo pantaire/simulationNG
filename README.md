@@ -21,11 +21,8 @@ Haben Sie dies erfolgreich eingerichtet, können Sie über die Oberfläche mit d
 
 ## Weitere Hilfe
 
-### ...für Angular:
+Um Hilfe mit Angular zu erhalten, führen Sie den Befehl `ng help` aus oder besuchen Sie [Angular CLI Overview and Command Reference](https://angular.io/cli).
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
-### ...zu diesem Projekt:
 
-Feel free to reach out to any maintainers via github for further documentation, explanation or helpful tips.
 
