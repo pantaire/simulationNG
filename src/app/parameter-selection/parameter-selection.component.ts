@@ -45,35 +45,73 @@ export class ParameterSelectionComponent {
 
 
   //sends input to Backend
-  // TODO: check if value !undefined
   onSubmit(simulationInput) {
-      console.log(this.simulation);
-        this.simulation =  {
-            rundenanzahl: simulationInput.rundenanzahl,
-            eventWahrscheinlichkeit: simulationInput.eventWahrscheinlichkeit,
-            lieferantenanzahl: simulationInput.lieferantenanzahl,
-            kundenanzahl: simulationInput.kundenanzahl,
-            produktionsunternehmenanzahl: simulationInput.produktionsunternehmenanzahl,
-            startKapitalKMin: simulationInput.startKapitalKMin,
-            startKapitalKMax: simulationInput.startKapitalKMax,
-            startKapitalPUMin: simulationInput.startKapitalPUMin,
-            startKapitalPUMax: simulationInput.startKapitalPUMax,
-            startKapitalLMin: simulationInput.startKapitalLMin,
-            startKapitalLMax: simulationInput.startKapitalLMax,
-            produktionsmengePUMin: simulationInput.produktionsmengePUMin,
-            produktionsmengePUMax: simulationInput.produktionsmengePUMax,
-            produktionsmengeLMin: simulationInput.produktionsmengeLMin,
-            produktionsmengeLMax: simulationInput.produktionsmengeLMax,
-            lagerLMin: simulationInput.lagerLMin,
-            lagerLMax: simulationInput.lagerLMax,
-            lagerPUMin: simulationInput.lagerPUMin,
-            lagerPUMax: simulationInput.lagerPUMax  
-        }; 
+    console.log(simulationInput);
+    console.log(this.simulation);
+    //replaces undefined values with hard-coded default values
+    // TODO: replace with for each (does not seem possible?!)
+    if(simulationInput.rundenanzahl === undefined){
+        simulationInput = this.simulation.rundenanzahl;
+    }
+    if(simulationInput.eventWahrscheinlichkeit === undefined){
+        simulationInput.eventWahrscheinlichkeit = this.simulation.eventWahrscheinlichkeit;
+    }
+    if(simulationInput.lieferantenanzahl === undefined){
+        simulationInput.lieferantenanzahl = this.simulation.lieferantenanzahl;
+    }
+    if(simulationInput.produktionsunternehmenanzahl === !undefined){
+        simulationInput.produktionsunternehmenanzahl = this.simulation.produktionsunternehmenanzahl;
+    }
+    if(simulationInput.kundenanzahl === !undefined){
+        simulationInput.kundenanzahl = this.simulation.kundenanzahl;
+    }
+    if(simulationInput.startKapitalKMin === !undefined){
+        simulationInput.startKapitalKMin = this.simulation.startKapitalKMin;
+    }
+    if(simulationInput.startKapitalKMax === !undefined){
+        simulationInput.startKapitalKMax = this.simulation.startKapitalKMin;
+    }
+    if(simulationInput.startKapitalLMin === !undefined){
+        simulationInput.startKapitalLMin = this.simulation.startKapitalLMin;
+    }
+    if(simulationInput.startKapitalLMax === !undefined){
+        simulationInput.startKapitalLMax = this.simulation.startKapitalLMax;
+    }
+    if(simulationInput.startKapitalPUMin === !undefined){
+        simulationInput.startKapitalPUMin = this.simulation.startKapitalPUMin;
+    }
+    if(simulationInput.startKapitalPUMax === !undefined){
+        simulationInput.startKapitalPUMax = this.simulation.startKapitalPUMax;
+    }
+    if(simulationInput.produktionsmengePUMin === !undefined){
+        simulationInput.produktionsmengePUMin = this.simulation.produktionsmengePUMin;
+    }
+    if(simulationInput.produktionsmengePUMax === !undefined){
+        simulationInput.produktionsmengePUMax = this.simulation.produktionsmengePUMax;
+    }
+    if(simulationInput.produktionsmengeLMin === !undefined){
+        simulationInput.produktionsmengeLMin = this.simulation.produktionsmengeLMin;
+    }
+    if(simulationInput.produktionsmengeLMax === !undefined){
+        simulationInput.produktionsmengeLMax = this.simulation.produktionsmengeLMax;
+    }
+    if(simulationInput.lagerLMin === !undefined){
+        simulationInput.lagerLMin = this.simulation.lagerLMin;
+    }
+    if(simulationInput.lagerLMax === !undefined){
+        simulationInput.lagerLMax = this.simulation.lagerLMax;
+    }
+    if(simulationInput.lagerPUMin === !undefined){
+        simulationInput.lagerPUMin = this.simulation.lagerPUMin;
+    }
+    if(simulationInput.lagerPUMax === !undefined){
+        simulationInput.lagerPUMax = this.simulation.lagerPUMax;
+    }
         console.log(this.simulation);
     
     //Input validation
     if (this.validateInput(simulationInput)) {
-        //POST Request, passes Input to simulation.service
+        //POST Request, passes Input to simulation.service.ts
         this.simulationService.httpPostSimulation(this.simulation);    
     }
   }

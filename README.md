@@ -6,13 +6,14 @@ Angular kann über den Node Package Manager installiert werden. Hierfür benöti
 Führen Sie die Installation anhand des angezeigten Wizards aus.  
 Öffnet Sie eine Kommandozeile und führen Sie folgenden Befehl aus, um Angular zu installieren: 
 `npm install -g @angular/cli`  
-Um die erfolgreiche Installation zu testen, führen Sie den Befehl `ng version` aus, um sich die Versionnummer der installierten Angularversion anzeigen zu lassen. 
+Um die erfolgreiche Installation zu testen, führen Sie den Befehl `ng version` aus, um sich die Versionnummer der installierten Angularversion anzeigen zu lassen.  
 
 ## Angular starten  
 
 Öffnen Sie eine Kommandozeile und navigieren Sie zu dem Pfad, an dem die (entpackten) Dateien dieses Projekts gespeichert sind. 
 Führen Sie anschließend den Befehl `ng serve -o` aus, um einen Entwicklungsserver von Angular zu starten und ein Browserfenster zu öffnen.  
-Angular öffnet sich nun auf `http://localhost:4200`. 
+Angular öffnet sich nun auf `http://localhost:4200`.  
+Tritt hierbei der Fehler auf, dass gewisse Pakete von Angular nicht gefunden werden können, führen Sie ein Update von NPM und Angular über die Befehle `npm update` und `ng update` aus.  
 
 ## Kommunikation mit dem Backend
 
