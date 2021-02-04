@@ -53,11 +53,11 @@ export class SimulationDashboardComponent implements OnInit {
     };
 
     new Chart("rundenStatistikL", {
-        type: 'bar',
+        type: 'line',
         data: {
           labels: labelL,
           datasets: [{
-            label: 'Statistik Lieferanten',
+            label: 'Gesamtvermögensverlauf Lieferanten',
             data: dataL,
             backgroundColor: [
               lieferantenColour
@@ -68,11 +68,11 @@ export class SimulationDashboardComponent implements OnInit {
       });
 
       new Chart("rundenStatistikPU", {
-        type: 'bar',
+        type: 'line',
         data: {
           labels: labelPU,
           datasets: [{
-            label: 'Statistik Produktionsunternehmen',
+            label: 'Gesamtvermögensverlauf aller Produktionsunternehmen',
             data: dataPU,
             backgroundColor: [
               lieferantenColour,
@@ -85,11 +85,11 @@ export class SimulationDashboardComponent implements OnInit {
       });
 
       new Chart("rundenStatistikK", {
-        type: 'pie',
+        type: 'line',
         data: {
           labels: [ labelK ],
           datasets: [{
-            label: 'Statistik Kunden',
+            label: 'Gesamtvermögensverlauf aller Kunden',
             data: [ dataK ],
             backgroundColor: [
               lieferantenColour,
