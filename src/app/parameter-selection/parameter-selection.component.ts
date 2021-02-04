@@ -13,7 +13,27 @@ export class ParameterSelectionComponent {
 
   @Input() simulationInput:Simulation;
 
-  simulation:Simulation;
+  simulation:Simulation =  {
+      rundenanzahl: 1000,
+      eventWahrscheinlichkeit: 0.5,
+      lieferantenanzahl: 200,
+      kundenanzahl: 300,
+      produktionsunternehmenanzahl: 50,
+      startKapitalKMin: 10,
+      startKapitalKMax: 2000,
+      startKapitalPUMin: 100,
+      startKapitalPUMax: 10000,
+      startKapitalLMin: 50,
+      startKapitalLMax: 8000,
+      produktionsmengePUMin: 1,
+      produktionsmengePUMax: 100,
+      produktionsmengeLMin: 1,
+      produktionsmengeLMax: 200,
+      lagerLMin: 1,
+      lagerLMax: 1000,
+      lagerPUMin: 1,
+      lagerPUMax: 2000 
+  }; 
   
   //constructor(simulationService:SimulationService, router:Router) {
   constructor(private http: HttpClient, private simulationService:SimulationService) { 
@@ -21,10 +41,13 @@ export class ParameterSelectionComponent {
 
   validateInput(simulationInput):boolean {
       return true;
-  }
+    }
+
 
   //sends input to Backend
+  // TODO: check if value !undefined
   onSubmit(simulationInput) {
+      console.log(this.simulation);
         this.simulation =  {
             rundenanzahl: simulationInput.rundenanzahl,
             eventWahrscheinlichkeit: simulationInput.eventWahrscheinlichkeit,
@@ -46,6 +69,7 @@ export class ParameterSelectionComponent {
             lagerPUMin: simulationInput.lagerPUMin,
             lagerPUMax: simulationInput.lagerPUMax  
         }; 
+        console.log(this.simulation);
     
     //Input validation
     if (this.validateInput(simulationInput)) {

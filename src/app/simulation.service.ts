@@ -1,6 +1,5 @@
-import { Injectable, Output } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-
 import { Simulation } from '../models/simulation';
 import { ExpertSimulation } from 'src/models/expertsimulation';
 import { Router } from '@angular/router';
@@ -30,7 +29,6 @@ export class SimulationService {
             this.kundenStatistik = data.rundenStatistikKunden;
             this.lieferantenStatistik = data.rundenStatistikLieferanten;
             this.produzentenStatistik = data.rundenStatistikProduktionsunternehmen;
-            console.log(this.kundenStatistik);
             this.router.navigate(['/dashboard']);
         });
 

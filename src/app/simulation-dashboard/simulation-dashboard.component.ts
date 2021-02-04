@@ -22,24 +22,86 @@ export class SimulationDashboardComponent implements OnInit {
     var produzentenColour = 'rgb(0, 153, 255)';
     var kundenColour = 'rgb(153, 51, 255)';
 
-	const rundenStatistikProduktionsunternehmen = [];
-	const rundenStatistikLieferanten = [];
+    type MyArrayType = Array<{id: number, text: string}>;
+
+
+    var dataPU  = Object.values(this.service.produzentenStatistik);
+    var dataL   = Object.values(this.service.lieferantenStatistik);
+    var dataK   = Object.values(this.service.kundenStatistik);
+    var labelPU = Object.keys(this.service.produzentenStatistik);
+    var labelL  = Object.keys(this.service.lieferantenStatistik);
+    var labelK  = Object.keys(this.service.kundenStatistik);
+    //var dataTest = [120, 130, 140, 120, 120, 130, 150, 140, 130, 140]
+    //var labelTest = ['asef', 'bsef', 'asef', 'bsef', 'asef', 'bsef', 'asef', 'bsef', 'asef', 'bsef']
     
     var options = {
         responsive: true,
         title: {
-            display: false,
-          },
-        legend: {
-          display: false,
+            display: false
         },
-          yAxes: [{
-            ticks: {
-              beginAtZero: true
-            }
-          }]
+        legend: {
+            display: false
+        },
+        scales: {
+            yAxes: [{
+                display: true,
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }    
     };
 
+    new Chart("rundenStatistikL", {
+        type: 'bar',
+        data: {
+          labels: labelL,
+          datasets: [{
+            label: 'Statistik Lieferanten',
+            data: dataL,
+            backgroundColor: [
+              lieferantenColour
+            ],
+          }]
+        },
+        options: options
+      });
+
+      new Chart("rundenStatistikPU", {
+        type: 'bar',
+        data: {
+          labels: labelPU,
+          datasets: [{
+            label: 'Statistik Produktionsunternehmen',
+            data: dataPU,
+            backgroundColor: [
+              lieferantenColour,
+              produzentenColour,
+              kundenColour
+            ],
+          }]
+        },
+        options: options
+      });
+
+      new Chart("rundenStatistikK", {
+        type: 'pie',
+        data: {
+          labels: [ labelK ],
+          datasets: [{
+            label: 'Statistik Kunden',
+            data: [ dataK ],
+            backgroundColor: [
+              lieferantenColour,
+              produzentenColour,
+              kundenColour
+            ],
+          }]
+        },
+        options: options
+      });
+   
+      
   new Chart("gesamtZahlen", {
       type: 'bar',
       data: {
