@@ -1,15 +1,25 @@
 <div class="container" style="text-align: center"> <img src="/assets/img/logo.png" alt="" width="20%" style="margin-bottom: 3%">
     <form #simulationInput="ngForm" (ngSubmit)="onSubmit(simulationInput.value)" style="padding-bottom: 2%">
+        <div class="row">
+            <div class="col-sm" style="width: 10%;">
+                <app-explanation-popover popoverText="Diese Software dient dazu, die Produktion von Chips und Süßigkeiten zu simulieren. 
+                Dafür wird auf dem Server jeweils eine gewisse Anzahl Lieferanten, Produktionsunternehmen und Kunden erstellt, die Rohstoffe und Materialien kaufen, 
+                diese zu Endprodukten verarbeiten und schließlich konsumieren. 
+                "></app-explanation-popover>
+            </div>
+          </div>
+
+
     <div class="row">
       <div class="col-sm">
         <div><label for="rundenanzahl">Anzahl Runden:</label>
-        <app-explanation-popover popoverText="Anzahl der Runden, die die Simulation durchlaufen soll"></app-explanation-popover> </div>
-        <input required name="rundenanzahl" id="input"  [(ngModel)]="simulationInput.rundenanzahl" placeholder="1000" type="number" class="form-control">
+        <app-explanation-popover popoverText="Diese Simulation arbeitet rundenbasiert. In jeder Runde werden Rohstoffe hergestellt, sowie Produkte hergestellt und verkauft"></app-explanation-popover> </div>
+        <input required name="rundenanzahl" id="input" [(ngModel)]="simulationInput.rundenanzahl" placeholder="1000" type="number" class="form-control">
       </div>
       <div class="col-sm">
         <label for="eventWahrscheinlichkeit">Eventwahrscheinlichkeit:</label>
         <span> {{ simulationInput.eventWahrscheinlichkeit * 100 | number:'1.0-0' }} %</span>
-        <app-explanation-popover popoverText="Während jeder Runde können Events auftreten, die Konsequenzen für die weitere Simulation haben. Die Wahrscheinlichkeit kann von 'keine Events' bis '1 garantiertes Event' pro Runde gehen"></app-explanation-popover> 
+        <app-explanation-popover popoverText="Während jeder Runde können Events auftreten, die Konsequenzen für die weitere Simulation haben. Die Wahrscheinlichkeit kann von 'keine Events' bis '1 garantiertes Event' pro Runde gehen. Ein Beispiel ist Dürre, was sich auf die Produktion von Rohstoffen auswirken kann."></app-explanation-popover> 
         <input required name="eventWahrscheinlichkeit" [(ngModel)]="simulationInput.eventWahrscheinlichkeit" placeholder="0.005" type="range" class="custom-range" id="padding" min="0" max="1"
           value="eventWahrscheinlichkeit" step="0.005">
       </div>
