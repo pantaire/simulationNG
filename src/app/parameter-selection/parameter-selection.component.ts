@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { SimulationService } from '../simulation.service';
 import { Simulation } from '../../models/simulation';
 
@@ -11,40 +10,46 @@ import { Simulation } from '../../models/simulation';
 
 export class ParameterSelectionComponent {
 
-  @Input() simulationInput:Simulation;
+    @Input() simulationInput:Simulation;
 
-  //Festlegen von Defaultwerten für schnelle Simulation / falls unvollständige Daten vorliegen
-  simulation:Simulation =  {
-      rundenanzahl: 1000,
-      eventWahrscheinlichkeit: 0.005,
-      lieferantenanzahl: 30,
-      kundenanzahl: 300,
-      produktionsunternehmenanzahl: 3,
-      startKapitalKMin: 100,
-      startKapitalKMax: 300,
-      startKapitalPUMin: 10000,
-      startKapitalPUMax: 40000,
-      startKapitalLMin: 1000,
-      startKapitalLMax: 4000,
-      produktionsmengePUMin: 9,
-      produktionsmengePUMax: 20,
-      produktionsmengeLMin: 10,
-      produktionsmengeLMax: 30,
-      lagerLMin: 100,
-      lagerLMax: 200,
-      lagerPUMin: 30,
-      lagerPUMax: 90 
-  }; 
+    //Festlegen von Defaultwerten für schnelle Simulation / falls unvollständige Daten vorliegen
+    simulation:Simulation =  {
+        rundenanzahl: 1000,
+        eventWahrscheinlichkeit: 0.005,
+        lieferantenanzahl: 30,
+        kundenanzahl: 300,
+        produktionsunternehmenanzahl: 3,
+        startKapitalKMin: 100,
+        startKapitalKMax: 300,
+        startKapitalPUMin: 10000,
+        startKapitalPUMax: 40000,
+        startKapitalLMin: 1000,
+        startKapitalLMax: 4000,
+        produktionsmengePUMin: 9,
+        produktionsmengePUMax: 20,
+        produktionsmengeLMin: 10,
+        produktionsmengeLMax: 30,
+        lagerLMin: 100,
+        lagerLMax: 200,
+        lagerPUMin: 30,
+        lagerPUMax: 90 
+    }; 
   
-  //constructor(simulationService:SimulationService, router:Router) {
-  constructor(private http: HttpClient, private simulationService:SimulationService) { 
-  }
+    //constructor(simulationService:SimulationService, router:Router) {
+    constructor(private simulationService:SimulationService) { 
+    }
+
+    //schnelle Simulation mit Defaultwerten, keine Daten müssen eigegeben werden
+    fastSim() {
+        this.simulationService.httpPostSimulation(this.simulation); 
+        console.log(this.simulation); 
+    }
 
     //sends input to Backend
     onSubmit(simulationInput) {
         console.log(simulationInput);
         console.log(this.simulation);
-        //replaces undefined values with hard-coded default values
+        //replaces undefined values with default values above
         /* if(simulationInput.rundenanzahl === undefined){
             simulationInput.rundenanzahl = this.simulation.rundenanzahl;
         }

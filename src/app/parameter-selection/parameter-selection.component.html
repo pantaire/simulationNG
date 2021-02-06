@@ -1,17 +1,29 @@
-<div class="container" style="text-align: center"> <img src="/assets/img/logo.png" alt="" width="20%"
-    style="margin-bottom: 3%">
-  <form #simulationInput="ngForm" (ngSubmit)="onSubmit(simulationInput.value)" style="padding-bottom: 2%">
+<div class="container" style="text-align: center"> <img src="/assets/img/logo.png" alt="" width="20%" style="margin-bottom: 3%">
     
     <!--Logo und Erklärung-->
     <div class="row">
-      <div class="col-sm">
-        <app-explanation-popover popoverText="Diese Software dient dazu, die Produktion von Chips und Süßigkeiten zu simulieren. 
-                    Dafür wird auf dem Server jeweils eine gewisse Anzahl Lieferanten, Produktionsunternehmen und Kunden erstellt, die Rohstoffe und Materialien kaufen, 
-                    diese zu Endprodukten verarbeiten und schließlich konsumieren. 
-                    Für eine schnelle Simulation können alle oder einige Eingabefelder leer gelassen werden - stattdessen werden die angezeigten Platzhalter verwendet.
-                    "></app-explanation-popover>
-      </div>
+        <div class="col-sm">
+            <app-explanation-popover popoverText="Diese Software dient dazu, die Produktion von Chips und Süßigkeiten zu simulieren. 
+            Dafür wird auf dem Server jeweils eine gewisse Anzahl Lieferanten, Produktionsunternehmen und Kunden erstellt, die Rohstoffe und Materialien kaufen, 
+            diese zu Endprodukten verarbeiten und schließlich konsumieren. 
+            Für eine schnelle Simulation können alle oder einige Eingabefelder leer gelassen werden - stattdessen werden die angezeigten Platzhalter verwendet.
+            "></app-explanation-popover>
+        </div>
+    </div> 
+
+    <!--Schnelle Simulation mit Defaultwerten-->
+    <div class="row">
+        <div class="col-sm">
+            <div class="text-center"> <br>
+                <button type="submit" (click)="fastSim()" id="button"> schnelle Simulation </button>
+                <br>
+              </div>
+        </div>
     </div>
+    <hr>
+    <br>
+
+    <form #simulationInput="ngForm" (ngSubmit)="onSubmit(simulationInput.value)" style="padding-bottom: 2%">
 
     <!--Rundenanzahl und Eventwahrscheinlichkeit-->
     <div class="row">
