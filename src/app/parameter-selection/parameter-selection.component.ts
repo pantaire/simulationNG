@@ -52,7 +52,7 @@ export class ParameterSelectionComponent {
     //replaces undefined values with hard-coded default values
     // TODO: replace with for each (does not seem possible?!)
     if(simulationInput.rundenanzahl === undefined){
-        simulationInput = this.simulation.rundenanzahl;
+        simulationInput.rundenanzahl = this.simulation.rundenanzahl;
     }
     if(simulationInput.eventWahrscheinlichkeit === undefined){
         simulationInput.eventWahrscheinlichkeit = this.simulation.eventWahrscheinlichkeit;
