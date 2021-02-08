@@ -1,17 +1,9 @@
-.footer {
-    position: sticky;
-    margin: 1 auto;
-    width: 100%;
-}
-.smallpad {
-    padding-top: 4;
-    padding-bottom: 4;
-}
-
 footer {
   background-color: #1e1e1e !important;
   font-family: 'Verdana', Verdana!important;
   margin: 1!important;
   overflow-x: hidden!important;
   color: #FDFDFF!important;
-}
+  bottom: 0 !important;
+  width: 100%;
+ }
