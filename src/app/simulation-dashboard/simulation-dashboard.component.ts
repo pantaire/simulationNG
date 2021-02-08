@@ -87,10 +87,10 @@ export class SimulationDashboardComponent implements OnInit {
       new Chart("rundenStatistikK", {
         type: 'line',
         data: {
-          labels: [ labelK ],
+          labels: labelK,
           datasets: [{
             label: 'Gesamtvermögensverlauf aller Kunden',
-            data: [ dataK ],
+            data: dataK,
             backgroundColor: [
               lieferantenColour,
               produzentenColour,

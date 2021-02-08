@@ -16,7 +16,7 @@ export class ParameterSelectionComponent {
 
     //Festlegen von Defaultwerten für schnelle Simulation / falls unvollständige Daten vorliegen
     simulation:Simulation =  {
-        rundenanzahl: 1000,
+        rundenanzahl: 200,
         eventWahrscheinlichkeit: 0.005,
         lieferantenanzahl: 30,
         kundenanzahl: 300,

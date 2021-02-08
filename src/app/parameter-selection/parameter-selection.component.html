@@ -33,7 +33,7 @@
             popoverText="Diese Simulation arbeitet rundenbasiert. In jeder Runde werden Rohstoffe hergestellt, sowie Produkte hergestellt und verkauft">
           </app-explanation-popover>
         </div>
-        <input required name="rundenanzahl" id="input" [(ngModel)]="simulationInput.rundenanzahl" placeholder="1000"
+        <input required name="rundenanzahl" id="input" [(ngModel)]="simulationInput.rundenanzahl" placeholder="{{siumlation.rundenanzahl}}"
           type="number" class="form-control">
         <div class="input-error" *ngIf="simulationInput.rundenanzahl < 1">
           Rundenanzahl muss mindestens 1 sein
