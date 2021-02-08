@@ -6,3 +6,14 @@
     color: red;
     font-size: small;
 }
+
+.footer-bottom {
+    position: fixed;
+    background-color: #1e1e1e !important;
+    font-family: 'Verdana', Verdana!important;
+    margin: 1!important;
+    overflow-x: hidden!important;
+    color: #FDFDFF!important;
+    bottom: 0 !important;
+    width: 100%;
+  }
