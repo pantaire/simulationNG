@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { SimulationService } from '../simulation.service';
 import { Simulation } from '../../models/simulation';
 
@@ -8,38 +8,42 @@ import { Simulation } from '../../models/simulation';
   styleUrls: ['./parameter-selection.component.css']
 })
 
-export class ParameterSelectionComponent {
+export class ParameterSelectionComponent implements OnInit {
 
     @Input() simulationInput:Simulation;
-
+    simulation:Simulation;
     inputError:string;
 
-    //Festlegen von Defaultwerten für schnelle Simulation / falls unvollständige Daten vorliegen
-    simulation:Simulation =  {
-        rundenanzahl: 200,
-        eventWahrscheinlichkeit: 0.005,
-        lieferantenanzahl: 30,
-        kundenanzahl: 300,
-        produktionsunternehmenanzahl: 3,
-        startKapitalKMin: 100,
-        startKapitalKMax: 300,
-        startKapitalPUMin: 10000,
-        startKapitalPUMax: 40000,
-        startKapitalLMin: 1000,
-        startKapitalLMax: 4000,
-        produktionsmengePUMin: 9,
-        produktionsmengePUMax: 20,
-        produktionsmengeLMin: 10,
-        produktionsmengeLMax: 30,
-        lagerLMin: 100,
-        lagerLMax: 200,
-        lagerPUMin: 30,
-        lagerPUMax: 90 
-    }; 
+    ngOnInit(): void {
+
+        //Festlegen von Defaultwerten für schnelle Simulation / falls unvollständige Daten vorliegen
+        this.simulation =  {
+            rundenanzahl: 200,
+            eventWahrscheinlichkeit: 0.005,
+            lieferantenanzahl: 30,
+            kundenanzahl: 300,
+            produktionsunternehmenanzahl: 3,
+            startKapitalKMin: 100,
+            startKapitalKMax: 300,
+            startKapitalPUMin: 10000,
+            startKapitalPUMax: 40000,
+            startKapitalLMin: 1000,
+            startKapitalLMax: 4000,
+            produktionsmengePUMin: 9,
+            produktionsmengePUMax: 20,
+            produktionsmengeLMin: 10,
+            produktionsmengeLMax: 30,
+            lagerLMin: 100,
+            lagerLMax: 200,
+            lagerPUMin: 30,
+            lagerPUMax: 90 
+        }; 
+    }
   
     //constructor(simulationService:SimulationService, router:Router) {
     constructor(private simulationService:SimulationService) { 
     }
+
 
     //schnelle Simulation mit Defaultwerten, keine Daten müssen eigegeben werden
     fastSim() {
