@@ -18,6 +18,8 @@ export class SimulationDashboardComponent implements OnInit {
 
         //log data from http response for debugging
         console.log(this.service.kundenStatistik);
+        console.log(this.service.produzentenStatistik);
+        console.log(this.service.lieferantenStatistik);
 
         // defines colours for diagrams, used in options
         var lieferantenColour = 'rgb(77, 225, 255)';
@@ -59,45 +61,41 @@ export class SimulationDashboardComponent implements OnInit {
                 label: 'Gesamtvermögen aller Lieferanten im Rundenverlauf',
                 data: dataL,
                 backgroundColor: [
-                lieferantenColour
+                    lieferantenColour
                 ],
             }]
             },
             options: options
         });
 
-      new Chart("rundenStatistikPU", {
-        type: 'line',
-        data: {
-          labels: labelPU,
-          datasets: [{
-            label: 'Gesamtvermögen aller Produktionsunternehmen im Rundenverlauf',
-            data: dataPU,
-            backgroundColor: [
-              lieferantenColour,
-              produzentenColour,
-              kundenColour
-            ],
-          }]
-        },
-        options: options
-      });
+        new Chart("rundenStatistikPU", {
+            type: 'line',
+            data: {
+            labels: labelPU,
+            datasets: [{
+                label: 'Gesamtvermögen aller Produktionsunternehmen im Rundenverlauf',
+                data: dataPU,
+                backgroundColor: [
+                produzentenColour
+                ],
+            }]
+            },
+            options: options
+        });
 
-      new Chart("rundenStatistikK", {
-        type: 'line',
-        data: {
-          labels: labelK,
-          datasets: [{
-            label: 'Gesamtvermögen aller Kunden im Rundenverlauf',
-            data: dataK,
-            backgroundColor: [
-              lieferantenColour,
-              produzentenColour,
-              kundenColour
-            ],
-          }]
-        },
-        options: options
-      });
+        new Chart("rundenStatistikK", {
+            type: 'line',
+            data: {
+            labels: labelK,
+            datasets: [{
+                label: 'Gesamtvermögen aller Kunden im Rundenverlauf',
+                data: dataK,
+                backgroundColor: [
+                kundenColour
+                ],
+            }]
+            },
+            options: options
+        });
     }
 }

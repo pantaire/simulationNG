@@ -26,9 +26,9 @@ export class SimulationService {
     // Kommunikation zu Backend, Bereitstellen der Simulationseingabe - Antwort liefert Simulation mit Daten für Statistik zurück
      httpPostSimulation(simulation:Simulation) {
         return this.http.post<any>(this.simulationAPI, simulation).subscribe(data => {
-            this.kundenStatistik = data.rundenStatistikKunden;
             this.lieferantenStatistik = data.rundenStatistikLieferanten;
             this.produzentenStatistik = data.rundenStatistikProduktionsunternehmen;
+            this.kundenStatistik = data.rundenStatistikKunden;
             this.router.navigate(['/dashboard']);
         });
 
