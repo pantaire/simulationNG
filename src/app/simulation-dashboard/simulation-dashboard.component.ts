@@ -48,17 +48,28 @@ export class SimulationDashboardComponent implements OnInit {
                     display: true,
                     ticks: {
                         beginAtZero: true
+                    },
+                    scaleLabel: {
+                        labelString: "Zeitraum",
+                        display: true
+                    }
+                }],
+                xAxes: [{
+                    display: true,
+                    scaleLabel: {
+                        labelString: "Gesamtvermögen"
                     }
                 }]
             }    
         };
 
+        //Lieferantendiagramm
         new Chart("rundenStatistikL", {
             type: 'line',
             data: {
             labels: labelL,
             datasets: [{
-                label: 'Gesamtvermögen aller Lieferanten im Rundenverlauf',
+                label: 'Gesamtvermögen',
                 data: dataL,
                 backgroundColor: [
                     lieferantenColour
@@ -68,12 +79,13 @@ export class SimulationDashboardComponent implements OnInit {
             options: options
         });
 
+        //Produzentendiagramm
         new Chart("rundenStatistikPU", {
             type: 'line',
             data: {
             labels: labelPU,
             datasets: [{
-                label: 'Gesamtvermögen aller Produktionsunternehmen im Rundenverlauf',
+                label: 'Gesamtvermögen',
                 data: dataPU,
                 backgroundColor: [
                 produzentenColour
@@ -83,12 +95,13 @@ export class SimulationDashboardComponent implements OnInit {
             options: options
         });
 
+        //Kundendiagramm
         new Chart("rundenStatistikK", {
             type: 'line',
             data: {
             labels: labelK,
             datasets: [{
-                label: 'Gesamtvermögen aller Kunden im Rundenverlauf',
+                label: 'Gesamtvermögen',
                 data: dataK,
                 backgroundColor: [
                 kundenColour
