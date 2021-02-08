@@ -97,12 +97,12 @@ export class ParameterSelectionComponent {
             && simulationInput.lagerLMin < simulationInput.lagerLMax
             && simulationInput.lagerPUMin < simulationInput.lagerPUMax)
         {
-            //POST Request, passes Input to simulation.service.ts
-            this.simulationService.httpPostSimulation(this.simulation);    
-        }
-        else {
             // displays error message underneath submit button
             this.inputError = "Bitte erst alle Felder korrekt ausfüllen - oder schnelle Simulation ausprobieren"
+        }
+        else {
+            //POST Request, passes Input to simulation.service.ts
+            this.simulationService.httpPostSimulation(this.simulation);    
         }
     }
 }
