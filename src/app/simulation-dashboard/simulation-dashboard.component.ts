@@ -27,11 +27,11 @@ export class SimulationDashboardComponent implements OnInit {
         var kundenColour = 'rgb(153, 51, 255)';
 
         // data extruded from http response, used to build diagrams
-        var dataPU  = Object.values(this.service.produzentenStatistik);
         var dataL   = Object.values(this.service.lieferantenStatistik);
+        var dataPU  = Object.values(this.service.produzentenStatistik);
         var dataK   = Object.values(this.service.kundenStatistik);
-        var labelPU = Object.keys(this.service.produzentenStatistik);
         var labelL  = Object.keys(this.service.lieferantenStatistik);
+        var labelPU = Object.keys(this.service.produzentenStatistik);
         var labelK  = Object.keys(this.service.kundenStatistik);
         
         //options to display diagrams
