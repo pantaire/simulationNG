@@ -13,6 +13,11 @@ export class SimulationDashboardComponent implements OnInit {
 
     constructor(private service:SimulationService) {}
 
+    dataL=[];
+    dataPU=[];
+    dataK=[];
+    events=[];
+
     @Input() simulation: Simulation;
     ngOnInit(): void {
 
@@ -27,9 +32,10 @@ export class SimulationDashboardComponent implements OnInit {
         var kundenColour = 'rgb(153, 51, 255)';
 
         // data extruded from http response, used to build diagrams
-        var dataL   = Object.values(this.service.lieferantenStatistik);
-        var dataPU  = Object.values(this.service.produzentenStatistik);
-        var dataK   = Object.values(this.service.kundenStatistik);
+        //this.events = Object.values(this.service.event)
+        this.dataL  = Object.values(this.service.lieferantenStatistik);
+        this.dataPU = Object.values(this.service.produzentenStatistik);
+        this.dataK  = Object.values(this.service.kundenStatistik);
         var labelL  = Object.keys(this.service.lieferantenStatistik);
         var labelPU = Object.keys(this.service.produzentenStatistik);
         var labelK  = Object.keys(this.service.kundenStatistik);
@@ -70,7 +76,7 @@ export class SimulationDashboardComponent implements OnInit {
             labels: labelL,
             datasets: [{
                 label: 'Gesamtvermögen',
-                data: dataL,
+                data: this.dataL,
                 backgroundColor: [
                     lieferantenColour
                 ],
@@ -86,7 +92,7 @@ export class SimulationDashboardComponent implements OnInit {
             labels: labelPU,
             datasets: [{
                 label: 'Gesamtvermögen',
-                data: dataPU,
+                data: this.dataPU,
                 backgroundColor: [
                 produzentenColour
                 ],
@@ -102,7 +108,7 @@ export class SimulationDashboardComponent implements OnInit {
             labels: labelK,
             datasets: [{
                 label: 'Gesamtvermögen',
-                data: dataK,
+                data: this.dataK,
                 backgroundColor: [
                 kundenColour
                 ],
