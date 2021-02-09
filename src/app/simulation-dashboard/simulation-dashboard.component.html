@@ -43,13 +43,13 @@
                         {{ round + 1 }}
                     </td>
                     <td>
-                        {{ dataL[round] }}
+                        {{ dataL[round] | number:'1.0-0'}}
                     </td>
                     <td>
-                        {{ dataPU[round] }}
+                        {{ dataPU[round] | number:'1.0-0'}}
                     </td>
                     <td>
-                        {{ dataK[round] }}
+                        {{ dataK[round] | number:'1.0-0'}}
                     </td>
                     <td>
                         <!--{{ events[round]}}-->
