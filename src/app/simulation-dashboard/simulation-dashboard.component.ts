@@ -17,6 +17,7 @@ export class SimulationDashboardComponent implements OnInit {
     dataPU=[];
     dataK=[];
     events=[];
+    arraylength;
 
     @Input() simulation: Simulation;
     ngOnInit(): void {
@@ -39,6 +40,8 @@ export class SimulationDashboardComponent implements OnInit {
         var labelL  = Object.keys(this.service.lieferantenStatistik);
         var labelPU = Object.keys(this.service.produzentenStatistik);
         var labelK  = Object.keys(this.service.kundenStatistik);
+        this.arraylength = this.dataL.length;
+        console.log(this.arraylength);
         
         //options to display diagrams
         var options = {
