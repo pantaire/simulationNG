@@ -64,12 +64,12 @@
     <div class="row">
       <div class="col-sm">
         <label for="lieferantenanzahl">Anzahl Lieferanten:</label>
-        <app-explanation-popover popoverText="Wie viele Lieferanten sollen in dieser Simulation generiert werden?">
+        <app-explanation-popover popoverText="Wie viele Lieferanten sollen in dieser Simulation generiert werden? Mindestens 13 Lieferanten sind nötig, um alle nötigen Rohstoffe abdecken zu können">
         </app-explanation-popover>
         <input required name="lieferantenanzahl" id="input" [(ngModel)]="simulationInput.lieferantenanzahl"
           placeholder="{{ simulation.lieferantenanzahl }}" type="number" class="form-control">
-        <div class="input-error" *ngIf="simulationInput.lieferantenanzahl < 1">
-          Mindestens 1 Lieferant
+        <div class="input-error" *ngIf="simulationInput.lieferantenanzahl < 12">
+          Mindestens 13 Lieferanten, um alle Rohstoffe abzudecken
         </div>
       </div>
       <div class="col-sm">

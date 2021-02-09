@@ -76,7 +76,7 @@ export class ParameterSelectionComponent implements OnInit {
 
         //check validation again before sending (must be: defined && number && <0 && min<max)
         if (simulationInput.rundenanzahl < 0 
-            && simulationInput.lieferantenanzahl < 0
+            && simulationInput.lieferantenanzahl < 13
             && simulationInput.produktionsunternehmenanzahl < 0
             && simulationInput.kundenanzahl < 0
             && simulationInput.startKapitalLMax < 0
