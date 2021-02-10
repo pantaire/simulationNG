@@ -8,7 +8,12 @@
   bottom: 0 !important;
   width: 100%;
 }
-
+th {
+    position: sticky;
+    top: 0;
+    background-color: rgb(53, 53, 53);
+    box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.4);
+}
 table {
     text-align: left;
 }
@@ -16,4 +21,9 @@ table {
 .overview {
     text-align: center;
     font-size: 400% ;
+}
+
+.scroll {
+    height:600px;
+    overflow-y:scroll;
 }

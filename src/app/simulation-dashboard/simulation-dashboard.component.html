@@ -33,33 +33,35 @@
   <div class="row">
       <div class="col-sm">
           <h2>Rundenverlauf</h2>
-          <table class="table table-sm table-striped table-hover table-dark tbl-color tbl-content">
-              <tr>
-                  <th>Runde</th>
-                  <th>Vermögen Lieferanten</th>
-                  <th>Vermögen Produzenten</th>
-                  <th>Vermögen Kunden</th>
-                  <th>Aktive Events</th>
-                </tr>
-                <tr *ngFor="let item of [].constructor(arraylength); let round = index">
-                    <td>
-                        {{ round + 1 }}
-                    </td>
-                    <td>
-                        {{ dataL[round] }}
-                    </td>
-                    <td>
-                        {{ dataPU[round] }}
-                    </td>
-                    <td>
-                        {{ dataK[round] }}
-                    </td>
-                    <td>
-                        {{ events[round] }}
-                    </td>
-                </tr>
-          </table>
-      </div>
+          <div class="scroll">
+              <table class="table table-sm table-striped table-hover table-dark tbl-color tbl-content">
+                  <tr>
+                      <th>Runde</th>
+                      <th>Vermögen Lieferanten</th>
+                      <th>Vermögen Produzenten</th>
+                      <th>Vermögen Kunden</th>
+                      <th>Aktive Events</th>
+                    </tr>
+                    <tr *ngFor="let item of [].constructor(arraylength); let round = index">
+                        <td>
+                            {{ round + 1 }}
+                        </td>
+                        <td>
+                            {{ dataL[round] }}
+                        </td>
+                        <td>
+                            {{ dataPU[round] }}
+                        </td>
+                        <td>
+                            {{ dataK[round] }}
+                        </td>
+                        <td>
+                            {{ events[round] }}
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
   </div>
 </div>
 <br>
