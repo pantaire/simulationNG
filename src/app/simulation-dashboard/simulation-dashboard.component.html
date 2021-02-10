@@ -38,7 +38,7 @@
                   <th>Vermögen Lieferanten</th>
                   <th>Vermögen Produzenten</th>
                   <th>Vermögen Kunden</th>
-                  <th>Aktive Events</th>
+                  <!--th>Aktive Events</th-->
                 </tr>
                 <tr *ngFor="let item of [].constructor(arraylength); let round = index">
                     <td>
@@ -53,9 +53,9 @@
                     <td>
                         {{ dataK[round] | number }}
                     </td>
-                    <td>
-                        <!--{{ events[round]}}-->
-                    </td>
+                    <!--td>
+                        <{{ events[round]}}>
+                    </td-->
                 </tr>
           </table>
       </div>

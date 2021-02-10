@@ -27,6 +27,7 @@ export class SimulationDashboardComponent implements OnInit {
         console.log(this.service.kundenStatistik);
         console.log(this.service.produzentenStatistik);
         console.log(this.service.lieferantenStatistik);
+        //console.log(this.service.events);
 
         // defines colours for diagrams, used in options
         var lieferantenColour = 'rgb(77, 225, 255)';
