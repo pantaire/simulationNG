@@ -53,27 +53,30 @@ export class ParameterSelectionComponent implements OnInit {
 
     //sends input to Backend
     onSubmit(simulationInput) {
-        
-        simulationInput.rundenanzahl = this.simulation.rundenanzahl;
-        simulationInput.eventWahrscheinlichkeit = this.simulation.eventWahrscheinlichkeit;
-        simulationInput.lieferantenanzahl = this.simulation.lieferantenanzahl;
-        simulationInput.produktionsunternehmenanzahl = this.simulation.produktionsunternehmenanzahl;
-        simulationInput.kundenanzahl = this.simulation.kundenanzahl;
-        simulationInput.startKapitalKMin = this.simulation.startKapitalKMin;
-        simulationInput.startKapitalKMax = this.simulation.startKapitalKMin;
-        simulationInput.startKapitalLMin = this.simulation.startKapitalLMin;
-        simulationInput.startKapitalLMax = this.simulation.startKapitalLMax;
-        simulationInput.startKapitalPUMin = this.simulation.startKapitalPUMin;
-        simulationInput.startKapitalPUMax = this.simulation.startKapitalPUMax;
-        simulationInput.produktionsmengePUMin = this.simulation.produktionsmengePUMin;
-        simulationInput.produktionsmengePUMax = this.simulation.produktionsmengePUMax;
-        simulationInput.produktionsmengeLMin = this.simulation.produktionsmengeLMin;
-        simulationInput.produktionsmengeLMax = this.simulation.produktionsmengeLMax;
-        simulationInput.lagerLMin = this.simulation.lagerLMin;
-        simulationInput.lagerLMax = this.simulation.lagerLMax;
-        simulationInput.lagerPUMin = this.simulation.lagerPUMin;
-        simulationInput.lagerPUMax = this.simulation.lagerPUMax;
+        console.log(this.simulation)
+        console.log(this.simulationInput)
+        console.log(simulationInput)
+        this.simulation.rundenanzahl = simulationInput.rundenanzahl;
+        this.simulation.eventWahrscheinlichkeit = simulationInput.eventWahrscheinlichkeit;
+        this.simulation.lieferantenanzahl = simulationInput.lieferantenanzahl;
+        this.simulation.produktionsunternehmenanzahl = simulationInput.produktionsunternehmenanzahl;
+        this.simulation.kundenanzahl = simulationInput.kundenanzahl;
+        this.simulation.startKapitalKMin = simulationInput.startKapitalKMin;
+        this.simulation.startKapitalKMax = simulationInput.startKapitalKMin;
+        this.simulation.startKapitalLMin = simulationInput.startKapitalLMin;
+        this.simulation.startKapitalLMax = simulationInput.startKapitalLMax;
+        this.simulation.startKapitalPUMin = simulationInput.startKapitalPUMin;
+        this.simulation.startKapitalPUMax = simulationInput.startKapitalPUMax;
+        this.simulation.produktionsmengePUMin = simulationInput.produktionsmengePUMin;
+        this.simulation.produktionsmengePUMax = simulationInput.produktionsmengePUMax;
+        this.simulation.produktionsmengeLMin = simulationInput.produktionsmengeLMin;
+        this.simulation.produktionsmengeLMax = simulationInput.produktionsmengeLMax;
+        this.simulation.lagerLMin = simulationInput.lagerLMin;
+        this.simulation.lagerLMax = simulationInput.lagerLMax;
+        this.simulation.lagerPUMin = simulationInput.lagerPUMin;
+        this.simulation.lagerPUMax = simulationInput.lagerPUMax;
 
+        console.log(this.simulation)
         //check validation again before sending (must be: defined && number && <0 && min<max)
         if (simulationInput.rundenanzahl < 0 
             && simulationInput.lieferantenanzahl < 13
