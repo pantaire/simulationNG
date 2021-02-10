@@ -68,7 +68,7 @@
         </app-explanation-popover>
         <input required name="lieferantenanzahl" id="input" [(ngModel)]="simulationInput.lieferantenanzahl"
           placeholder="{{ simulation.lieferantenanzahl }}" type="number" class="form-control">
-        <div class="input-error" *ngIf="simulationInput.lieferantenanzahl < 12">
+        <div class="input-error" *ngIf="simulationInput.lieferantenanzahl < 13">
           Mindestens 13 Lieferanten, um alle Rohstoffe abzudecken
         </div>
       </div>
@@ -233,7 +233,7 @@
           <input style="width: 50%;" id="input" required name="lagerLMin" [(ngModel)]="simulationInput.lagerLMin"
           placeholder="{{ simulation.lagerLMin }}" type="number" class="form-control">
           <input style="width: 50%;" id="input" required name="lagerLMax" [(ngModel)]="simulationInput.lagerLMax"
-          placeholder="{{ simulation.lagerLMax }}" class="form-control">
+          placeholder="{{ simulation.lagerLMax }}" type="number" class="form-control">
         </div>
       </div>
       <div class="col-sm">
