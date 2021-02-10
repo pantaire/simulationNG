@@ -12,3 +12,8 @@
 table-dark {
 width: 100%;
 }
+
+.overview {
+    text-align: center;
+    font-size: 400% ;
+}

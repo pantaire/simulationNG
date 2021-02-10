@@ -13,6 +13,7 @@ export class SimulationDashboardComponent implements OnInit {
 
     constructor(private service:SimulationService) {}
 
+    //used for http response
     dataL=[];
     dataPU=[];
     dataK=[];
@@ -41,7 +42,6 @@ export class SimulationDashboardComponent implements OnInit {
         var labelPU = Object.keys(this.service.produzentenStatistik);
         var labelK  = Object.keys(this.service.kundenStatistik);
         this.arraylength = this.dataL.length;
-        console.log(this.arraylength);
         
         //options to display diagrams
         var options = {
@@ -59,14 +59,15 @@ export class SimulationDashboardComponent implements OnInit {
                         beginAtZero: true
                     },
                     scaleLabel: {
-                        labelString: "Zeitraum",
+                        labelString: "Gesamtvermögen",
                         display: true
                     }
                 }],
                 xAxes: [{
                     display: true,
                     scaleLabel: {
-                        labelString: "Gesamtvermögen"
+                        labelString: "Zeitraum",
+                        display: true
                     }
                 }]
             }    
