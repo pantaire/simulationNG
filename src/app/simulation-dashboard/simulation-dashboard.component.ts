@@ -27,6 +27,7 @@ export class SimulationDashboardComponent implements OnInit {
         console.log(this.service.kundenStatistik);
         console.log(this.service.produzentenStatistik);
         console.log(this.service.lieferantenStatistik);
+        console.log(this.service.eventVerlauf);
         //console.log(this.service.events);
 
         // defines colours for diagrams, used in options
@@ -39,6 +40,7 @@ export class SimulationDashboardComponent implements OnInit {
         this.dataL  = Object.values(this.service.lieferantenStatistik);
         this.dataPU = Object.values(this.service.produzentenStatistik);
         this.dataK  = Object.values(this.service.kundenStatistik);
+        this.events = Object.values(this.service.eventVerlauf);
         var labelL  = Object.keys(this.service.lieferantenStatistik);
         var labelPU = Object.keys(this.service.produzentenStatistik);
         var labelK  = Object.keys(this.service.kundenStatistik);
@@ -57,7 +59,8 @@ export class SimulationDashboardComponent implements OnInit {
                 yAxes: [{
                     display: true,
                     ticks: {
-                        beginAtZero: true
+                        beginAtZero: true,
+                        min: 0
                     },
                     scaleLabel: {
                         labelString: "Gesamtvermögen",

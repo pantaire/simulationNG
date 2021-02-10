@@ -4,15 +4,16 @@
 
   <!--Rundenstatistik-->
   <div class="row">
+      <h2>Gesamtvermögen</h2>
     <div class="col-sm">
       <div id="charts">
-        <h2>Gesamtvermögen Lieferanten</h2>
+        <h2>Lieferanten</h2>
         <canvas id=rundenStatistikL></canvas>
       </div>
     </div>
     <div class="col-sm">
       <div id="charts">
-        <h2>Gesamtvermögen Produktionsunternehmen</h2>
+        <h2>Produktionsunternehmen</h2>
         <canvas id="rundenStatistikPU"></canvas>
       </div>
     </div>
@@ -20,7 +21,7 @@
   <div class="row">
     <div class="col-sm">
       <div id="charts">
-        <h2>Gesamtvermögen Kunden</h2>
+        <h2>Kunden</h2>
         <canvas id="rundenStatistikK"></canvas>
       </div>
     </div>
@@ -38,7 +39,7 @@
                   <th>Vermögen Lieferanten</th>
                   <th>Vermögen Produzenten</th>
                   <th>Vermögen Kunden</th>
-                  <!--th>Aktive Events</th-->
+                  <th>Aktive Events</th>
                 </tr>
                 <tr *ngFor="let item of [].constructor(arraylength); let round = index">
                     <td>
@@ -53,9 +54,9 @@
                     <td>
                         {{ dataK[round] }}
                     </td>
-                    <!--td>
-                        <{{ events[round]}}>
-                    </td-->
+                    <td>
+                        {{ events[round] }}
+                    </td>
                 </tr>
           </table>
       </div>
