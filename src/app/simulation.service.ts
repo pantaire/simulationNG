@@ -22,9 +22,7 @@ export class SimulationService {
     kundenStatistik;
     lieferantenStatistik;
     produzentenStatistik;
-    anzahlL;
-    anzahlPU;
-    anzahlK;
+    eventVerlauf;
 
     // Kommunikation zu Backend, Bereitstellen der Simulationseingabe - Antwort liefert Simulation mit Daten für Statistik zurück
      httpPostSimulation(simulation:Simulation) {
@@ -32,9 +30,7 @@ export class SimulationService {
             this.lieferantenStatistik = data.rundenStatistikLieferanten;
             this.produzentenStatistik = data.rundenStatistikProduktionsunternehmen;
             this.kundenStatistik = data.rundenStatistikKunden;
-            this.anzahlL = data.lieferantenanzahl;
-            this.anzahlK = data.kundenanzahl;
-            this.anzahlPU = data.produktionsunternehmenanzahl;
+            this.eventVerlauf = data.eventVerlauf;
             console.log(data);
             this.router.navigate(['/dashboard']);
         });

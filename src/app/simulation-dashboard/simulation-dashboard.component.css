@@ -9,6 +9,9 @@
   width: 100%;
 }
 
+table {
+    text-align: center;
+}
 table-dark {
 width: 100%;
 }
